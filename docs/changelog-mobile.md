@@ -8,7 +8,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
-- Exception added in Dedicated Booking
+- Analytics Dashboard UI added
+- Expanse Analysis UI added
+- Invoice summary and recent invoice api integrated in Analytics Dashboard
 
 ---
 
@@ -17,7 +19,6 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial changelog setup
 - Director module added
-
 
 
 ## [2.6.16] - 2025-07-24
@@ -79,3 +80,23 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Exception added in Dedicated Booking
+
+ 
+## [2.6.24] - 2025-08-08
+
+### Added
+- Update App feature added
+- Remove option for saved users credentials added
+- Analytics Dashboard UI added
+- Expanse Analysis UI added
+- Invoice summary and recent invoice api integrated in Analytics Dashboard 
+
+### Fixed
+- Close order issue fixed
+- Add Document in Vendor Pod Issue Fixed
+
+
+## [2.6.25] - 2025-08-13
+
+### Fixed
+- Range error in Proof upload Issue Fixed
