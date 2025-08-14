@@ -14,6 +14,8 @@ This guide explains how to create a  **booking** using **Simple Booking Form**.
 
 3. Enter the **customer name**, along with the **pickup and delivery addresses**.
 
+![Basic Booking Details](/img/basic_booking_details.png")
+
 4. Specify the **pickup and delivery** date and time.
 
 5. Select the **truck type** and choose the appropriate **tonnage**.
