@@ -17,4 +17,5 @@ This guide explains how to prepare and issue a **self-billed e-invoice** using *
 5. Once submitted to the e-invoice portal, the self-billed invoice will be created using the selected currency, with the customer recorded as the supplier and your company as the buyer.
 
 6. Similarly, self-billed **credit or debit notes** also work using the same process.
-    ![Self-Billed Invoice and Currency Selection](/img/self_billed_customer_form.png)
+
+    ![Self-Billed Invoice and Currency Selection](/img/self_billed_customer_details.png)
