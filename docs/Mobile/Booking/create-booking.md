@@ -27,7 +27,7 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 ### Step 3: Add Additional Stops or Ending Location
 
 - If you need to **Add Pickup** or **Add Stop**, look for a **popup menu icon (⋯)**.
-- Tap your desig option to open a new text field for your next destination/stop.
+- Tap your desired option.
 - Begin typing the name of your destination using your keyboard.
 - A list of suggested locations will populate as you type.
 - Repeat this process for any additional stops you need to add.
