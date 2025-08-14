@@ -8,6 +8,8 @@ This guide explains how to create a  **booking** using **Simple Booking Form**.
 ---
 1. Click on the **Simple Booking** button, then click on the **Create Booking** button.
 
+![Create Booking Button](/img/create_booking_button.png")
+
 2. The **Simple Booking** form will open.
 
 3. Enter the **customer name**, along with the **pickup and delivery addresses**.
