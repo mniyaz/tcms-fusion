@@ -1,6 +1,13 @@
-Sure! Here's the **copyable version** of your content, styled exactly like your reference — with emojis, bold formatting, and clean layout:
+---
+sidebar_position: 1
+---
+
+# 📅 Simple Booking
+
+Welcome to the **Simple Booking** feature! This guide will walk you through the process of creating a booking seamlessly.
 
 ---
+
 
 ## 📘 Easy Guide: How to Make a Simple Booking
 
