@@ -17,12 +17,14 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 - As you type, a list of suggested locations should appear below the text field.
 - Review the suggestions and select the correct starting location from the list.
 
+
 ### Step 2: Input Your Ending Location
 
 - Locate and tap on the **End Location** text field.
 - Begin typing the name of your destination using your keyboard.
 - A list of suggested locations will populate as you type.
 - Choose your desired ending location from the populated suggestions.
+
 
 ### Step 3: Add Additional Stops or Ending Location
 
@@ -32,6 +34,7 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 - A list of suggested locations will populate as you type.
 - Repeat this process for any additional stops you need to add.
 
+
 ### Step 4: Select Customer
 
 - Locate and tap on the **Select Customer** text field.
@@ -39,6 +42,7 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 - As you type, a list of suggested customers should appear below the text field.
 - Review the suggestions and select the correct customer name from the list.
 - To proceed, please click the **Next** button.
+
 
 ### Step 5: Booking Details
 
@@ -48,6 +52,7 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 - Tap the **Name of Person** field, type the full name of the individual responsible for the booking or to be contacted(Optional).
 - Tap the **Contact Number** field, enter a valid and active phone number (e.g., mobile or landline) that can be used for communication regarding the booking(Optional).
 - Tap the **Remarks** field, input any special instructions, notes, or additional details relevant to the booking.
+
 
 ### Step 6: Booking Confirmation Page
 
