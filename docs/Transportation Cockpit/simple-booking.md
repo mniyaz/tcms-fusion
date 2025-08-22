@@ -1,31 +1,91 @@
----
-sidebar_position: 1
----
-# Simple Booking Form
-
-This guide explains how to create a  **booking** using **Simple Booking Form**.
+Sure! Here's the **copyable version** of your content, styled exactly like your reference — with emojis, bold formatting, and clean layout:
 
 ---
-1. Click on the **Simple Booking** button, then click on the **Create Booking** button.
 
-![Create Booking Button](/img/create_booking_button.png")
+## 📘 Easy Guide: How to Make a Simple Booking
 
-2. The **Simple Booking** form will open.
+In the Transportation Cockpit, you can make bookings in 3 ways:
 
-3. Enter the **customer name**, along with the **pickup and delivery addresses**.
+### 🚛 1. Basic Booking
 
-![Basic Booking Details](/img/basic_booking_details.png")
+Just save the booking. No need to choose truck or driver.
 
-4. Specify the **pickup and delivery** date and time.
+### 🚚 2. Booking with Truck & Driver
 
-5. Select the **truck type** and choose the appropriate **tonnage**.
+Same as Basic Booking, but you also pick a truck and driver.
 
-6. Assign a **truck and driver**.
+### 📄 3. Booking with POD (Proof of Delivery)
 
-7. Upload the **Proof of Delivery (POD)**:
+Same as above, but after delivery, you upload a delivery document.
 
-Enter the **Shipping or Delivery Order (DO)** number.
+---
 
-Choose the relevant file.
+## 🚦 How to Start a Booking
 
-Click the **UPLOAD** button to complete the process.
+1. Open the **Transportation Cockpit** module.
+2. Click the **Simple Booking** button.
+3. You’ll go to the **Master Dashboard**.
+4. Click **CREATE BOOKING**.
+5. A booking form will appear.
+
+---
+
+## 📝 Steps for All Bookings
+
+These steps are the same for all types of bookings:
+
+* **Customer Name**
+  Type the name. If it’s an old customer, details will fill in automatically.
+
+* **Pickup & Delivery Address**
+
+  * Option 1: Type the address and choose from Google suggestions.
+  * Option 2: Press **Ctrl + Q** to get address from system.
+
+* **Pickup & Delivery Date/Time**
+  Use the calendar to choose date and time.
+
+* **Quantity & Price**
+  Type how much is being shipped and the price.
+
+* **Truck Type & Tonnage**
+  Choose the truck type from the dropdown.
+
+---
+
+## ✅ 1. Basic Booking
+
+If you don’t want to assign truck or driver:
+
+* Click **Book Truck**
+* Booking is saved.
+* Customer gets email confirmation.
+* You go back to **Master Dashboard**.
+
+---
+
+## ✅ 2. Booking with Truck & Driver
+
+If you want to assign truck and driver:
+
+* After filling the form, choose truck and driver from the list.
+* You can pick from your own trucks or vendor trucks.
+* Click **Book Truck**
+* Booking is saved with truck and driver info.
+
+---
+
+## ✅ 3. Booking with POD (Proof of Delivery)
+
+If delivery is done and you want to close the booking:
+
+* Type the **Shipping Reference** or **DO Number**
+* Change delivery status to **DELIVERED**
+* Upload POD file (PDF)
+
+  * Click **Choose File**
+  * Then click **Upload**
+* Booking is marked as **Delivered**
+* Customer gets email with POD copy
+
+---
