@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+id: operator-pod-upload
+sidebar_label: Operator POD Upload
 ---
 
 # 📦 POD Upload – Easy Guide for Operators
