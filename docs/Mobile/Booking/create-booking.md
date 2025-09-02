@@ -33,7 +33,7 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 
 ## 📋 Step 5: Fill in Booking Details
 - Check the **Address** and **Company Name**  
-- Tap the **Date** to choose when the booking is for *(optional)*  
+- Tap the **Date** to choose when the pickup and delivery is for <span style={{color: 'red'}}>(Required)</span>
 - Add the **Contact Person’s Name** *(optional)*  
 - Enter the **Phone Number** *(optional)*  
 - Type any **Remarks** or special instructions  
