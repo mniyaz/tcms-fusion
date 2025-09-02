@@ -42,5 +42,5 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 - Double-check the **Address**  
 - Choose the **Truck Type** and **Load Tonnage**  
 - Enter the **Estimated Price**  
-- Tick **Send Notification** if you want updates sent  
+- Tick **Send Notification** if you want updates sent to **Customer**
 - Tap **Submit** — and you’re done!
