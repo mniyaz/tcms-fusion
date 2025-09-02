@@ -12,8 +12,8 @@ Welcome! This guide will help you upload your **Proof of Delivery (POD)** step b
 
 ## ✅ Step 1: Fill in the Details
 
-- **Document ID**: Type the document number<span style="color: red;">(Required)</span>.
-- **Delivery Status**: Choose one<span style="color: red;">(Required)</span>:
+- **Document ID**: Type the document number<span style={{color: 'red'}}>(Required)</span>.
+- **Delivery Status**: Choose one<span style={{color: 'red'}}>(Required)</span>:
   - ✅ Delivered
   - ❌ Rejected
   - 🚪 Shop Closed
