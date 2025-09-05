@@ -46,6 +46,7 @@ All notable changes to this project will be documented in this file.
 - Job Id Filter added.
 - Customer Logo added in side menu.
 - Stats added in Booking Dashboard.
+- Learn More option in Operator Pod upload added.
 
 
 ## [2.6.31] - 2025-08-27
