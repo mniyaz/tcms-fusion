@@ -7,6 +7,30 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.40] - 2025-09-10
+
+### New
+- Stats added in Booking Dashboard.
+- Job Id feature enabled for specified users from login response.
+- Product type feature in Create Booking enabled for specified users from login response.
+- Sales Analysis completed in Analytics Dashboard.
+
+
+## [2.6.39] - 2025-09-08
+
+### Improvements
+- Job Id feature disabled.
+
+### Bug Fixes
+- Trip details data type issue fixed.
+
+
+## [2.6.38] - 2025-09-05
+
+### Improvements
+- Changelog Updated.
+
+
 ## [2.6.37] - 2025-09-05
 
 ### Improvements
