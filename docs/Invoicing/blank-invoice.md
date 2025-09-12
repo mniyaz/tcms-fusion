@@ -15,6 +15,7 @@ From the application dashboard, go to the Invoicing module.
 ### 2. 📝 Access the Blank Invoice Form
 
 -Click on the **GENERATE INVOICE** button located under the Invoice or Summary Invoice tabs.
+
 -This will open an empty invoice form.
 
 ### 3. 👤 Fill Out Customer Details
@@ -29,13 +30,13 @@ From the application dashboard, go to the Invoicing module.
 
 -Enter the required information:
 
-Code/Category
+**Code/Category**
 
-Description
+**Description**
 
-Amount
+**Amount**
 
-Quantity
+**Quantity**
 
 ### 5. 💰 Select Tax Type
 
@@ -52,7 +53,8 @@ Click the **SAVE** icon to confirm and store the entered line item.
 Verify all details, including customer information, line items, and tax.
 
 ### 8. 📤 Enable E-Invoice Submission (Optional)
-oIf you want to submit the invoice to the **LHDN** portal, check the box labeled Generate E-Invoice.
+
+If you want to submit the invoice to the **LHDN** portal, check the box labeled Generate E-Invoice.
 
 ### 9. 🚀 Submit the Invoice
 
@@ -65,8 +67,8 @@ Once submitted, the invoice will be moved to the **GENERATED INVOICE** tab for f
 
 ### 🗒️ Notes
 
-Make sure all required fields are completed before clicking Submit.
+-Make sure all required fields are completed before clicking Submit.
 
-The E-Invoice option should only be enabled if integration with **LHDN** is active.
+-The E-Invoice option should only be enabled if integration with **LHDN** is active.
 
-You can always return to the **GENERATED INVOICE** tab to view, download, or take further actions on submitted invoices.
+-You can always return to the **GENERATED INVOICE** tab to view, download, or take further actions on submitted invoices.
