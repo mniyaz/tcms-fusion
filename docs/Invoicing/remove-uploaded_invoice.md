@@ -13,7 +13,7 @@ This guide explains how to remove an uploaded document from the **Generated Invo
 
 ---
 
-## Steps
+# Steps
 
 1. Navigate to **Invoicing → Generated Invoice**. 
 
