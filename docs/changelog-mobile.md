@@ -7,6 +7,40 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.42] - 2025-09-12
+
+### Improvements
+- Added Alert dialog in Close Booking.
+- Dropdown text size decreased in Payment and Expense Analysis.
+- The data is dynamically filtered upon tab selection in Expense and Payment Analysis.
+- Clicking a data point on the graph displays its corresponding value in Expense analysis
+
+### Bug Fixes
+- Salary details data type issue fixed.
+- Icons showing rectangular shape issue fixed.
+- Fixed a issue preventing quarter selection within the Payment Analysis feature..
+
+
+## [2.6.41] - 2025-09-11
+
+### Improvements
+- Job Id disappeared after navigating to book details page issue fixed.
+- Dropdown text size decreased in Payment and Expense Analysis.
+
+### New
+- Back Navigation on page title click in Analytics module added.
+- Filter on Status Click in Booking Dashboard added.
+- Added Awaiting pod and Awaiting cancel in Booking Analysis.
+- Excel download feature added in Booking Analysis.
+
+### Bug Fixes
+- Expense Analysis and Booking Analysis UI issues fixed.
+- Salary UI issue fixed.
+- Sales Analysis text wrap issue fixed.
+- Booking Analysis Empty return value issue fixed.
+- Booking Dashboard count stats issue fixed.
+
+
 ## [2.6.40] - 2025-09-10
 
 ### New
