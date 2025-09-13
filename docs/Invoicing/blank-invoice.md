@@ -8,27 +8,23 @@ This guide explains how to manually generate a blank invoice for a customer in t
 
 ---
 
-### 1. 📂 Navigate to the Invoicing Module
+### 1. 📂 Navigate to the Blank Invoice
 
-From the application dashboard, go to the Invoicing module.
-
-### 2. 📝 Access the Blank Invoice Form
+-From the application dashboard, go to the **Invoicing** module.
 
 -Click on the **GENERATE INVOICE** button located under the Invoice or Summary Invoice tabs.
 
--This will open an empty invoice form.
+-This will open an **BLANK INVOICE** form.
 
-### 3. 👤 Fill Out Customer Details
+  ![Navigate Blank Invoice](/img/navigate_blank_invoice.png)
+
+### 2. 👤 Fill Out Customer Details
 
 -In the **TO** section of the invoice, type the customer name, along with other details such as address, phone number, etc.
 
 -If the customer already exists in the system, the details will auto-fill based on the entered name.
 
-### 4. ✏️ Edit Invoice Line Items
-
--Click on the **EDIT** icon in the first row of the invoice table.
-
--Enter the required information:
+-Click on the **EDIT** icon and enter the required information:
 
 **Code/Category**
 
@@ -38,32 +34,23 @@ From the application dashboard, go to the Invoicing module.
 
 **Quantity**
 
-### 5. 💰 Select Tax Type
-
--Choose the appropriate tax type from the dropdown list.
-
--By default, **SST Tax (6%)** will be selected.
-
-### 6. ✅ Save Invoice Line Item
+-Choose the appropriate tax type from the dropdown list. By default, **SST Tax (6%)** will be selected.
 
 Click the **SAVE** icon to confirm and store the entered line item.
 
-### 7. 🔍 Review the Invoice
+  ![Blank Invoice Form](/img/blank_invoice.png)
 
-Verify all details, including customer information, line items, and tax.
+### 3. 🔍 Review the Invoice
 
-### 8. 📤 Enable E-Invoice Submission (Optional)
+-Verify all details, including customer information, line items, and tax.
 
-If you want to submit the invoice to the **LHDN** portal, check the box labeled Generate E-Invoice.
+-If you want to submit the invoice to the **LHDN** portal, check the box labeled Generate E-Invoice.
 
-### 9. 🚀 Submit the Invoice
+-Click the **SUBMIT** button to finalize the invoice.
 
-Click the **SUBMIT** button to finalize the invoice.
+-Once submitted, the invoice will be moved to the **GENERATED INVOICE** tab for further reference or action.
 
-### 10. 📁 View Generated Invoice
-
-Once submitted, the invoice will be moved to the **GENERATED INVOICE** tab for further reference or action.
-
+ ![E-Invoice Submission](/img/blank_einvoice.png)
 
 ### 🗒️ Notes
 
