@@ -10,6 +10,10 @@ Welcome! This guide will help you upload your **Close Booking** step by step. Ju
 
 ---
 
+> ℹ️ **Note:** Only **POD Completed** bookings can be selected and can be closed
+
+---
+
 - **Step 1**: Tap & Hold the booking from booking dashboard.
 
 - **Step 2**: If you want to close more, tap those too.

@@ -7,6 +7,20 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.43] - 2025-09-16
+
+### Improvements
+- Salary details UI updated.
+
+### Bug Fixes
+- Sales Graph issues fixed.
+- Unable to select some address in Create Booking Form issue fixed.
+- Range Error in Driver Pod and Pop updated.
+
+### New
+- Truck Maintenance UI completed.
+
+
 ## [2.6.42] - 2025-09-12
 
 ### Improvements
