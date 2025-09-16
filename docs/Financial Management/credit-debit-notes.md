@@ -4,7 +4,7 @@ id: credit-debit-note
 sidebar_label: Credit Debit Note
 ---
 
-# 📄 Credit Debit Note
+# 📝 Credit Debit Note
 
 This guide walks you through the steps to manually generate a Credit or Debit Note for a **Customer, Vendor, or Supplier** within the application. This feature is especially useful when issuing notes with e-Invoice integration.
 

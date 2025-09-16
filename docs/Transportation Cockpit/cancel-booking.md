@@ -10,64 +10,35 @@ This guide will walk you through the steps for cancelling a booking in the appli
 
 ### 1. 📂 Navigate to the Transportation Cockpit Module
 
--Start by logging into the application and accessing the Transportation Cockpit module from the main dashboard.
+-Go to the Transportation Cockpit module 
 
-### 2. 🔎 Select the Booking
+-Select the booking under the Booked, Assigned, or Delivery in Progress tabs, locate the booking you wish to cancel.
 
--Under the Booked, Assigned, or Delivery in Progress tabs, locate the booking you wish to cancel.
-
--Click on the checkbox near the **Booking ID** to select the relevant booking.
-
-### 3. 🗑️ Click on the CANCEL Option
+### 2. 🗑️ Click on the CANCEL Option
 
 -In the left menu, click the **CANCEL** option to begin the cancellation process.
 
-### 4. 💬 Cancellation Pop-up Box
+![Cancel Menu](/img/cancel_menu.png)
+
+### 3. 💬 Cancellation Pop-up Box
 
 A pop-up box will appear with two sub-tabs:
 
 **-Non-Chargeable**
 
-**-Chargeable**
+-In the non-chargeable tab, provide any relevant remarks about the cancellation.
 
 By default, the non-chargeable tab will be selected.
 
-## 🟢 Non-Chargeable Cancellation (Default Option)
+ ![Non Chargeable Cancel](/img/nonchargeable_cancellation.png)
 
-### 5. 📝 Enter Remarks
-
--In the non-chargeable tab, provide any relevant remarks about the cancellation.
-
-### 6. ✅ Confirm Cancellation
+**-Chargeable**
 
 -After entering the remarks, click the **CONFIRM** button to proceed with the cancellation.
 
-### 7. 📁 Booking Status Update
+-In the Chargeable tab, enter the **cancellation amount** to be charged to the customer and click the **CONFIRM** button.
 
--The booking will be cancelled and will move to the **SUMMARY** tab.
--It will not proceed to the **INVOICING** module since no charges apply.
-
-## 💸 Chargeable Cancellation (If Applicable)
-
-### 8. 🔄 Switch to the Chargeable Tab
-
--If the cancellation is **chargeable**, switch to the Chargeable tab within the cancellation pop-up.
-
-### 9. 💵 Enter Cancellation Amount and Remarks
-
--In the Chargeable tab, enter the **cancellation amount** to be charged to the customer.
-
--Provide any **relevant remarks** regarding the cancellation.
-
-### 10. ✅ Confirm Chargeable Cancellation
-
--Once the cancellation amount and remarks are entered, click the **CONFIRM** button.
-
-### 11. 📁 Booking Status Update
-
--The booking will be cancelled and moved to the **SUMMARY** tab.
-
--The booking will then proceed to the **INVOICING** module where an invoice will be generated for the customer to cover the cancellation charges.
+ ![Chargeable Cancel](/img/chargeable_cancellation.png)
 
 ## 🗒️ Additional Information
 
