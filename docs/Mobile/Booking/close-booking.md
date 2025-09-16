@@ -10,7 +10,7 @@ Welcome! This guide will help you upload your **Close Booking** step by step. Ju
 
 ---
 
-> ℹ️ **Note:** Only **POD Completed** bookings can be selected and can be closed
+> ℹ️ **Note:** Only **POD Completed** bookings can be selected and can be closed.
 
 ---
 
