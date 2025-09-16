@@ -16,7 +16,7 @@ This guide explains how to manually generate a blank invoice for a customer in t
 
 -This will open an **BLANK INVOICE** form.
 
-  ![Navigate Blank Invoice](/img/navigate_blank_invoice.png)
+  ![Navigate Blank Invoice](/img/navigate_blank_invoice_form.png)
 
 ### 2. 👤 Fill Out Customer Details
 
