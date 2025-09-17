@@ -12,7 +12,7 @@ This guide will walk you through the steps for cancelling a booking in the appli
 
 -Go to the Transportation Cockpit module 
 
--Select the booking under the Booked, Assigned, or Delivery in Progress tabs, locate the booking you wish to cancel.
+-**Select the booking** under the Booked, Assigned, or Delivery in Progress tabs, locate the booking you wish to cancel.
 
 ### 2. 🗑️ Click on the CANCEL Option
 
@@ -28,13 +28,13 @@ A pop-up box will appear with two sub-tabs:
 
 -In the non-chargeable tab, provide any relevant remarks about the cancellation.
 
+-After entering the remarks, click the **CONFIRM** button to proceed with the cancellation.
+
 By default, the non-chargeable tab will be selected.
 
  ![Non Chargeable Cancel](/img/nonchargeable_cancellation.png)
 
 **-Chargeable**
-
--After entering the remarks, click the **CONFIRM** button to proceed with the cancellation.
 
 -In the Chargeable tab, enter the **cancellation amount** to be charged to the customer and click the **CONFIRM** button.
 

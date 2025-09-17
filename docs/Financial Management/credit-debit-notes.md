@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 id: credit-debit-note
-sidebar_label: Credit Debit Note
+sidebar_label: 📝 Credit Debit Note
 ---
 
 # 📝 Credit Debit Note

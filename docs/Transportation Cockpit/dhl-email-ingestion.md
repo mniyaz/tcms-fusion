@@ -15,4 +15,11 @@ This guide explains how to integrate DHL Email Ingestion.
 3. Enter the **Shipping/DO Ref No** and Status, then upload the file. Once you click **Send Notification**, the customer will receive an email with the specified subject format and the file attached.
 
         ![POD Mail](/img/DHL_pod_mail_sample.png)
-    
+
+### Important Note:
+
+-Ensure that the **"Send POD as Link"** checkbox in the **Customer Form** within the HR module is not selected.
+
+-Only then will the customer receive the **POD email as a PDF** attachment instead of a link.
+     
+        ![POD link Disable](/img/send_pod_link_disabled.png)
