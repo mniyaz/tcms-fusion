@@ -123,7 +123,14 @@ const config = {
     }),
 
     plugins: [
-      [require.resolve('@cmfcmf/docusaurus-search-local')],
+      [
+        '@cmfcmf/docusaurus-search-local',
+        {
+          indexDocs: true,
+          indexBlog: false,
+          indexPages: true,
+        },
+      ],
       [
         '@docusaurus/plugin-client-redirects',
         {
@@ -135,7 +142,8 @@ const config = {
           ],
         },
       ],
-    ],    
+    ],
+       
 };
 
 export default config;
