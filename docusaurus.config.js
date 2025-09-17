@@ -23,20 +23,18 @@ const config = {
   // Set the production url of your site here
   url: 'https://fusion.tcms.ai',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
+  // 👇 Important: force canonical URLs with a trailing slash
+  trailingSlash: true,
+
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'aot-technologies', // Usually your GitHub org/user name.
   projectName: 'tcms-fusion', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -50,8 +48,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarItemsGenerator, // ← pass the function, not a string
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
         },
         blog: {
           showReadingTime: true,
@@ -59,9 +55,6 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -77,7 +70,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         logo: {
@@ -85,7 +77,6 @@ const config = {
           src: 'img/tcms_logo.png',
         },
         items: [
-          
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -96,8 +87,8 @@ const config = {
             label: "What's new!",
             position: 'left',
             items: [
-              { to: '/docs/changelog-mobile', label: 'What\'s New: Mobile' },
-              { to: '/docs/changelog-web', label: 'What\'s New: Web' },
+              { to: '/docs/changelog-mobile', label: "What's New: Mobile" },
+              { to: '/docs/changelog-web', label: "What's New: Web" },
             ],
           },
           { type: 'search', position: 'right' },
@@ -115,7 +106,6 @@ const config = {
               },
             ],
           },
-          
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Aot Technologies Sdn Bhd, MY.`,
       },
@@ -123,30 +113,29 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-      // docusaurus.config.js
       algolia: {
         appId: 'XD9T316235',
         apiKey: 'f22dce6b71ed1f24f2d640cbb97d15c8', // Use the **Search-Only API Key**
         indexName: 'tcms fusion',
-        contextualSearch: true, // Optional: enables contextual search
-        searchParameters: {},   // Optional: pass custom search params
+        contextualSearch: true, // enables contextual search
+        searchParameters: {},   // pass custom search params if needed
       },
     }),
-};
 
-plugins: [
-  [require.resolve('@cmfcmf/docusaurus-search-local')],
-  [
-    '@docusaurus/plugin-client-redirects',
-    {
-      redirects: [
-        {
-          to: '/docs/intro', // The path you want to serve as the home page
-          from: ['/'],       // The root path
-        },
-      ],
-    },
+  plugins: [
+    [require.resolve('@cmfcmf/docusaurus-search-local')],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/docs/intro', // The path you want to serve as the home page
+            from: ['/'],       // The root path
+          },
+        ],
+      },
+    ],
   ],
-];
+};
 
 export default config;
