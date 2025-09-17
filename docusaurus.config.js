@@ -127,7 +127,7 @@ const config = {
       algolia: {
         appId: 'XD9T316235',
         apiKey: 'f22dce6b71ed1f24f2d640cbb97d15c8', // Use the **Search-Only API Key**
-        indexName: 'tcms fusion',
+        indexName: 'tcmsfusiontcms fusion',
         contextualSearch: true, // Optional: enables contextual search
         searchParameters: {},   // Optional: pass custom search params
       },
