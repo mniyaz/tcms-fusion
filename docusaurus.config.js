@@ -122,20 +122,20 @@ const config = {
       },
     }),
 
-  plugins: [
-    [require.resolve('@cmfcmf/docusaurus-search-local')],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to: '/docs/intro', // The path you want to serve as the home page
-            from: ['/'],       // The root path
-          },
-        ],
-      },
-    ],
-  ],
+    plugins: [
+      [require.resolve('@cmfcmf/docusaurus-search-local')],
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/docs/intro',
+              from: ['/'],
+            },
+          ],
+        },
+      ],
+    ],    
 };
 
 export default config;
