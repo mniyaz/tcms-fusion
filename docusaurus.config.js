@@ -118,7 +118,8 @@ const config = {
         apiKey: 'f22dce6b71ed1f24f2d640cbb97d15c8', // Use the **Search-Only API Key**
         indexName: 'tcms fusion',
         contextualSearch: true, // enables contextual search
-        searchParameters: {},   // pass custom search params if needed
+        searchParameters: {},
+        searchPagePath: 'search',
       },
     }),
 
