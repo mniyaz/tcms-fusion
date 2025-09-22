@@ -6,7 +6,7 @@ sidebar_label: Close Booking
 
 # 📦 Close Booking – Easy Guide for Operators
 
-Welcome! This guide will help you upload your **Close Booking** step by step. Just follow along — it’s simple!
+Welcome! This guide will help you to **Close Booking** step by step. Just follow along — it’s simple!
 
 ---
 

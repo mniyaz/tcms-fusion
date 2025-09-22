@@ -10,6 +10,10 @@ Welcome! This guide will help you upload your **Proof of Delivery (POD)** step b
 
 ---
 
+> ℹ️ **Note:** The first time you use the app, it will ask to use your camera. Tap **Allow**
+
+---
+
 ## ✅ Step 1: Fill in the Details
 
 - **Document ID**: Type the document number<span style={{color: 'red'}}>(Required)</span>.
@@ -22,18 +26,10 @@ Welcome! This guide will help you upload your **Proof of Delivery (POD)** step b
 
 ---
 
-## 📸 Step 2: Take Photos of the Document
+## 📸 Step 2: Upload the Documents
 
-- **Allow Camera**: The first time you use the app, it will ask to use your camera. Tap **Allow**.
 - **Take Photo**: Use your camera to click a photo of the delivery document.
-- **Crop Photo**: You can cut the photo to show only the important part.
-- **Add More Photos**: Want to add more? Just repeat the photo steps.
-- **Save**: Tap **Save** when you’re done taking all photos.
-
----
-
-## ⬆️ Step 3: Upload the Photos
-
+- **Add More Photos**: Want to add more? Just repeat the steps.
 - **Check Photos**: Look at the photos you took. If one is wrong, tap the **Remove** button above it.
 - **Upload**: Tap the **Upload Documents** button.
 - **Wait**: After uploading, you’ll see a message: **POD successfully uploaded**.
@@ -41,7 +37,7 @@ Welcome! This guide will help you upload your **Proof of Delivery (POD)** step b
 
 ---
 
-## 📧 Step 4: Send Email
+## 📧 Step 3: Send Email
 
 - **Check Mail Status**: At the top of the screen, see if the mail is already sent.
 - **Choose PODs**: If not sent, select the PODs you want to email.

@@ -21,18 +21,10 @@ Welcome! This guide will help you upload your **Proof of Pickup (POP)** step by 
 
 ---
 
-## 📸 Step 2: Take Photos of the Document
+## 📸 Step 2: Upload the Documents
 
-- **Allow Camera**: The first time you use the app, it will ask to use your camera. Tap **Allow**.
-- **Take Photo**: Use your camera to click a photo of the delivery document.
-- **Crop Photo**: You can cut the photo to show only the important part.
-- **Add More Photos**: Want to add more? Just repeat the photo steps.
-- **Save**: Tap **Save** when you’re done taking all photos.
-
----
-
-## ⬆️ Step 3: Upload the Photos
-
+- **Take Photo**: Use your camera to click a photo of the pickup document.
+- **Add More Photos**: Want to add more? Just repeat the steps.
 - **Check Photos**: Look at the photos you took. If one is wrong, tap the **Remove** button above it.
 - **Upload**: Tap the **Upload Documents** button.
 - **Wait**: After uploading, you’ll see a message: **POP successfully uploaded**.
