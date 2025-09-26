@@ -7,6 +7,31 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.46] - 2025-09-26
+
+### Improvements
+- Changed Sales Graph label from 12 to 24 hours time format.
+
+
+## [2.6.45] - 2025-09-19
+
+### Improvements
+- Truck Maintenance Analysis Graph Api Integration Completed.
+
+### Bug Fixes
+- Production issues fixed in Add address and Proof Uploads.
+
+
+## [2.6.44] - 2025-09-17
+
+### Improvements
+- New UI for Salary Updated.
+- Sales Graph Completed.
+
+### Bug Fixes
+- Operator Proof Upload Orientation issue fixed.
+
+
 ## [2.6.43] - 2025-09-16
 
 ### Improvements
