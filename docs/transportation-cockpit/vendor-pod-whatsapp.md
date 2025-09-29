@@ -11,8 +11,9 @@ import VideoModal from '@site/src/components/VideoModal.js';
 <VideoModal
   linkText="Watch Video"
   title="YouTube Video"
-  iframeSrc="https://www.youtube.com/watch?v=wUjefvHqmeo"
+  iframeSrc="https://www.youtube.com/embed/wUjefvHqmeo?si=hYjt0x9Wuv9qtotz"
 />
+---
 
 ### ✅ Step 1: Place Booking and Assign Vendor Truck & Driver
 
