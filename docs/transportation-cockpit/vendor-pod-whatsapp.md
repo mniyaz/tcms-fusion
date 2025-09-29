@@ -6,6 +6,14 @@ sidebar_position: 1
 
 This guide explains how vendors can **upload Proof of Delivery (POD)** documents using a secure WhatsApp link. It is designed to make the process quick, mobile-friendly, and hassle-free for vendor drivers.
 
+import VideoModal from '@site/src/components/VideoModal.js';
+
+<VideoModal
+  linkText="Watch Video"
+  title="YouTube Video"
+  iframeSrc="https://www.youtube.com/watch?v=wUjefvHqmeo"
+/>
+
 ### ✅ Step 1: Place Booking and Assign Vendor Truck & Driver
 
 -Place a **booking** in the system.
