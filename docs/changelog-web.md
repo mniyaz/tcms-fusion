@@ -5,6 +5,18 @@ sidebar_position: 3
 
 Here you can track all important updates, fixes, and new features in the web version.
 
+## [2.0.7] - 2025-09-26
+
+### New
+- Revert option in FA for Customers, Vendors, and Suppliers
+- Separate columns for Invoice Amount and SST Amount in the Official Receipt table
+- Support for generating invoices with multiple currencies
+
+### Bug Fixes
+- Prevented multiple executions when clicking Close Order button
+- Fixed issue where SST Exempted Amount differed from SST Amount
+
+
 ## [2.0.6] - 2025-09-10
 
 ### New
