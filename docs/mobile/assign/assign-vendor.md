@@ -14,12 +14,15 @@ Welcome! This guide will help to **Assign Vendor** step by step. Just follow alo
 
 ---
 
-- **Step 1**: Click the **Assign** button from booking dashboard.
+## **Step 1**: Navigate to Assign Vendor
 
-- **Step 2**: Choose **Vendor** option to assign vendor.
+- Click the **Assign** button from booking dashboard.
+- Choose **Vendor** option to assign truck.
 
-- **Step 3**: Start typing in the **Select Vendor**, **Driver Name**, **Truck Number**, **Driver Phone**, **Agreed Price** and **Select Tonnage** boxes. Then choose the appropriate options from the suggestions that appear.
 
-- **Step 4**: Tap the **Assign** button.
+## **Step 2**: Assign the Truck
+
+- Start typing in the **Select Vendor**, **Driver Name**, **Truck Number**, **Driver Phone**, **Agreed Price** and **Select Tonnage** boxes. Then choose the appropriate options from the suggestions that appear.
+- Tap the **Assign** button.
 
 ---

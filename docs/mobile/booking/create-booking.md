@@ -15,15 +15,12 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 - Type your starting point  
 - Pick the correct option from the list  
 
-## ✅ Step 2: Choose Your Destination
+## ✅ Step 2: Choose Your Destination and Stops(If Needed)
 - Tap the **End Location** box  
-- Type your destination  
-- Select it from the suggestions  
-
-## ➕ Step 3: Add Extra Stops (If Needed)
-- Tap the **⋯ menu** and choose **Add Pickup** or **Add Stop**  
-- Type the location and select it  
-- Repeat if you have more stops  
+- Type your destination and select it from the suggestions
+- To add extra stops, tap the **⋯ menu** and choose **Add Pickup** or **Add Stop**  
+- Type each location and select it
+- Repeat for additional stops as needed
 
 ## 👤 Step 4: Select the Customer
 - Tap the **Customer Name** box  

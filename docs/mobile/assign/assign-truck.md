@@ -14,14 +14,16 @@ Welcome! This guide will help to **Assign Truck** step by step. Just follow alon
 
 ---
 
-- **Step 1**: Click the **Assign** button from booking dashboard.
+## **Step 1**: Navigate to Assign Truck
 
-- **Step 2**: Choose **Own** option to assign truck.
+- Click the **Assign** button from booking dashboard.
+- Choose **Own** option to assign truck.
 
-- **Step 3**: Start typing in the **Select Truck** and **Select Driver** boxes. Then choose the appropriate options from the suggestions that appear.
 
-- **Step 4**: Tick **Send Notification** if you want updates.
+## **Step 2**: Assign the Truck
 
-- **Step 5**: Tap the **Assign** button.
+- Start typing in the **Select Truck** and **Select Driver** boxes. Then choose the appropriate options from the suggestions that appear.
+- Tick **Send Notification** if you want updates.
+- Tap the **Assign** button.
 
 ---
