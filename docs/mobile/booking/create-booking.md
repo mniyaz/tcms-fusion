@@ -8,11 +8,7 @@ Welcome to the **Booking Creation** feature! This guide will walk you through th
 
 import VideoModal from '@site/src/components/VideoModal.js';
 
-<VideoModal
-  linkText="Watch Video"
-  title="YouTube Video"
-  iframeSrc="https://youtube.com/shorts/ZWR4XrQV1rk?feature=shared"
-/>
+<VideoModal linkText="Watch Video" title="YouTube Video" iframeSrc="https://www.youtube.com/shorts/ZWR4XrQV1rk" />
 
 ---
 
