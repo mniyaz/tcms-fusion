@@ -5,6 +5,14 @@ sidebar_position: 3
 
 Here you can track all important updates, fixes, and new features in the web version.
 
+## [2.0.8] - 2025-09-30
+
+### New
+- Added "Invoice Frequency" column to customer tables
+
+### Bug Fixes
+- Fixed the planner page loading issue after submission
+
 ## [2.0.7] - 2025-09-26
 
 ### New
