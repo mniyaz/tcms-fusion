@@ -7,6 +7,12 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.47] - 2025-10-03
+
+### Bug Fixes
+- Production issues fixed.
+
+
 ## [2.6.46] - 2025-09-26
 
 ### Improvements
