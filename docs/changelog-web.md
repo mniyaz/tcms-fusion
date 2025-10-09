@@ -5,6 +5,12 @@ sidebar_position: 3
 
 Here you can track all important updates, fixes, and new features in the web version.
 
+## [2.0.10] - 2025-10-08
+
+### Bug Fixes
+- Resolved an issue preventing vendor plan email delivery
+
+
 ## [2.0.9] - 2025-10-07
 
 ### New
@@ -15,6 +21,7 @@ Here you can track all important updates, fixes, and new features in the web ver
 ### Bug Fixes
 - Fixed vehicle checklist print issue under Reports
 - Fixed goods description issues for multiple addresses
+
 
 ## [2.0.8] - 2025-09-30
 
