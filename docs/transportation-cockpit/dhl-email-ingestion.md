@@ -5,6 +5,15 @@ sidebar_position: 2
 
 This guide explains how to integrate DHL Email Ingestion.
 
+import VideoModal from '@site/src/components/VideoModal.js';
+
+<VideoModal
+  linkText="Watch Video"
+  title="YouTube Video"
+  iframeSrc="https://www.youtube.com/embed/6nVeaaH80do?si=Uc6PMVTthHPXKvvD"
+/>
+---
+
 # Steps
 
 1. In the **Create Booking** form, select the required details such as **Customer**, **Product Type**, **Pickup**, **Delivery**, **Shipping/DO Ref No**, etc.  
