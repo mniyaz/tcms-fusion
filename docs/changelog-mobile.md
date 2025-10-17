@@ -7,6 +7,22 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.49] - 2025-10-17
+
+### Bug Fixes
+- Accept driver issue fixed.
+- Multipart post data for offline pod upload issue fixed.
+
+### Improvements
+- Toast added for all offline api calls.
+
+
+## [2.6.48] - 2025-10-16
+
+### New
+- Offline feature for driver dashboard and trip detail completed.
+
+
 ## [2.6.47] - 2025-10-03
 
 ### Bug Fixes
@@ -63,7 +79,7 @@ All notable changes to this project will be documented in this file.
 ### Bug Fixes
 - Salary details data type issue fixed.
 - Icons showing rectangular shape issue fixed.
-- Fixed a issue preventing quarter selection within the Payment Analysis feature..
+- Fixed a issue preventing quarter selection within the Payment Analysis feature.
 
 
 ## [2.6.41] - 2025-09-11
@@ -186,11 +202,9 @@ All notable changes to this project will be documented in this file.
 - Add New Document not working in Driver and vendor proof upload fixed
 - Proof upload without selecting the image issue fixed.
 
-
 ### Improvements
 - Driver Module side menu updated
 - Icon for pickup and delivery for booking details changed
-
 
 ### New
 - Month Graph in Expanse Analysis added
