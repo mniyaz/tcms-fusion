@@ -7,6 +7,26 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.51] - 2025-10-24
+
+### Bug Fixes
+- Removed Offline feature for driver.
+
+### Improvements
+- Autocomplete optimized.
+
+### New
+- Saved Address feature added for Create Booking.
+- Add Requirements feature added.
+
+
+## [2.6.50] - 2025-10-21
+
+### Improvements
+- Updated Create booking UI.
+- Customers list autocomplete optimized in create booking.
+
+
 ## [2.6.49] - 2025-10-17
 
 ### Bug Fixes
