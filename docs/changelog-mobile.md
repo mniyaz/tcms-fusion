@@ -7,6 +7,46 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.55] - 2025-10-31
+
+### Improvements
+- Map location not showing when google location is selected issue fixed.
+
+
+## [2.6.54] - 2025-10-31
+
+### Improvements
+- Autofocus on Saved Address in the creating booking.
+- Detailed info in Saved Address.
+
+
+## [2.6.54] - 2025-10-31
+
+### Improvements
+- Autofocus on Saved Address in the creating booking.
+- Detailed info in Saved Address.
+
+
+## [2.6.53] - 2025-10-29
+
+### Improvements
+- Renamed cancel to close in close booking alert.
+- Add Requirements submit button updated.
+
+
+## [2.6.52] - 2025-10-28
+
+### Bug Fixes
+- Fixed Create Booking issues.
+
+### Improvements
+- Only Delivery and Pickup address should show in Add Requirements.
+- Clear values after clicked back button in Add Requirements.
+
+### New
+- Add Manpower feature added.
+
+
 ## [2.6.51] - 2025-10-24
 
 ### Bug Fixes
