@@ -7,6 +7,30 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.59] - 2025-11-06
+
+### Improvements
+- Feedback data has been updated for the currently logged-in employee.
+
+
+## [2.6.58] - 2025-11-05
+
+### New
+- Feedback feature added.
+
+
+## [2.6.57] - 2025-11-03
+
+### Improvements
+- Auto focus to Picked address in Creating booking added.
+
+
+## [2.6.56] - 2025-10-31
+
+### Improvements
+- Map location not showing when google location is selected for end location issue fixed.
+
+
 ## [2.6.55] - 2025-10-31
 
 ### Improvements
