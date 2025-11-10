@@ -39,7 +39,7 @@ Click on the ➕ icon to create a **new quotation**. This will open the Create Q
 
 -For Waiting Charges, input the **price or percentage** based on the number of hours.
 
-## 3. Other Charges
+### 3. Other Charges
 
 -Select **additional charges** from the dropdown (e.g., Hand Jack, Trolley, etc.).
 
