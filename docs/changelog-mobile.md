@@ -7,6 +7,66 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.68] - 2025-11-13
+
+### Improvements
+- Customer name can be edited in Create Booking.
+
+### Bug Fixes
+- Package data not showing in Booking detail issue fixed.
+
+
+## [2.6.67] - 2025-11-12
+
+### Improvements
+- Fixed 16 KB memory page alignment for Google Play 2025.
+
+
+## [2.6.66] - 2025-11-12
+
+### Bug Fixes
+- The issue where the phone number and name were auto-filled in the booking details upon selecting a saved address for pickup has been resolved.
+
+
+## [2.6.65] - 2025-11-11
+
+### Improvements
+- Phone number and name auto filled in Book details when user selected saved address.
+
+
+## [2.6.64] - 2025-11-11
+
+### Improvements
+- Booking dashboard UI updated.
+
+
+## [2.6.63] - 2025-11-11
+
+### Improvements
+- Changed active tickets to in progress.
+
+
+## [2.6.62] - 2025-11-10
+
+### Improvements
+- Add notification for ticketing module.
+
+
+## [2.6.61] - 2025-11-10
+
+### Improvements
+- Booking dashboard UI updated.
+
+
+## [2.6.60] - 2025-11-07
+
+### Improvements
+- Feedback feature disabled
+
+### New
+- Booked by info added in Booking Dashboard.
+
+
 ## [2.6.59] - 2025-11-06
 
 ### Improvements
