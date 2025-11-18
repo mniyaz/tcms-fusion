@@ -21,7 +21,7 @@ Go to: System Master → Customer → **Quotation**
 
 Click on the ➕ icon to create a **new quotation**. This will open the Create Quotation form.
 
-## 🔄 Steps to Create a Quotation
+### 🔄 Steps to Create a Quotation
 
 ### 1. Customer & Quotation Details
 
