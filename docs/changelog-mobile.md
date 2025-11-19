@@ -7,6 +7,23 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.74] - 2025-11-19
+
+### Improvements
+-  Updated 16 KB memory page alignment for Google Play 2025.
+
+
+## [2.6.73] - 2025-11-18
+
+### Improvements
+- Autocomplete optimized in Create Booking with Assign flow.
+- Automatically card will be created if the pod data is empty Operator Proof Upload.
+- Default value is now "Delivered" in operator proof upload.
+
+### Bug Fixes
+- Selection issue in Assign truck fixed.
+
+
 ## [2.6.68] - 2025-11-13
 
 ### Improvements
