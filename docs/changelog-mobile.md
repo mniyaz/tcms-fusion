@@ -7,6 +7,21 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.76] - 2025-11-27
+
+### New
+- Pull Quotation in Create Booking completed.
+
+### Improvements
+- Updated Selected date label in Create Booking.
+
+
+## [2.6.75] - 2025-11-21
+
+### New
+- Add Petty Cash and Add Cash Advance UI completed.
+
+
 ## [2.6.74] - 2025-11-19
 
 ### Improvements
