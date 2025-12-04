@@ -27,8 +27,8 @@ import VideoModal from '@site/src/components/VideoModal.js';
 
 ### Important Note:
 
--Ensure that the **"Send POD as Link"** checkbox in the **Customer Form** within the HR module is not selected.
+-First select the **DHL Type Customer** checkbox, and ensure that the **Send POD as Link** checkbox in the **Customer Form** within the **System Master** is **not selected**.
 
--Only then will the customer receive the **POD email as a PDF** attachment instead of a link.
+-Only then will the customer receive the **POD email as a PDF** attachment instead of a link, with the specified subject format.
      
         ![POD link Disable](/img/send_pod_link_disabled.png)
