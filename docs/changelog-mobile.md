@@ -7,6 +7,43 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.82] - 2025-12-03
+
+### Bug Fixes
+- Automatic navigation not working in Ios Issue Updated.
+
+
+## [2.6.81] - 2025-12-03
+
+### Bug Fixes
+- Automatic navigation not working in Ios Issue Updated.
+
+
+## [2.6.80] - 2025-12-03
+
+### Bug Fixes
+- Operator Pod Upload null issue fixed.
+- Automatic navigation not working in Ios Issue fixed.
+
+
+## [2.6.79] - 2025-12-02
+
+### Bug Fixes
+- Address not selecting issue fixed in create booking.
+
+
+## [2.6.78] - 2025-12-01
+
+### Bug Fixes
+- Address not selecting issue fixed in create booking.
+
+
+## [2.6.77] - 2025-12-01
+
+### Bug Fixes
+- Address not selecting issue fixed in create booking.
+
+
 ## [2.6.76] - 2025-11-27
 
 ### New
