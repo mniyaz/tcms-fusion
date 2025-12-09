@@ -5,6 +5,51 @@ sidebar_position: 3
 
 Here you can track all important updates, fixes, and new features in the web version.
 
+## [2.0.15] - 2025-12-09
+
+### New
+- Sub-Ledger report for Customer, Vendor and Supplier
+- Double-click a text field in invoice rows to switch to edit mode
+
+### Bug Fixes
+- Resolved upload icon not showing in Pettycash table
+
+## [2.0.14] - 2025-11-28
+
+### New
+- Integration with DHL Timestamp API
+- DO Status sub-menu under Booking Management
+
+### Bug Fixes
+- Fixed the Goods description issue in driver trips list
+
+
+## [2.0.13] - 2025-11-20
+
+### Improvements
+- Enhanced alignment in FA reports and invoices for multi-page documents
+- Allowed CN/DN to be created more than once for the same invoice
+- Removed the POD mail sent restriction required to close an order
+
+
+## [2.0.12] - 2025-11-12
+
+### New
+- E-Invoice submission now processed using the current date
+
+### Bug Fixes
+- Fixed the single invoice generation issue for multiple drop points
+
+
+## [2.0.11] - 2025-10-27
+
+### Improvements
+- Transport Cockpit module has been renamed to Booking Management
+- HR Module has been moved to System Master
+
+### Bug Fixes
+- Resolved the drop point issue in Single Invoice Quotation
+
 ## [2.0.10] - 2025-10-08
 
 ### Bug Fixes
