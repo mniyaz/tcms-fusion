@@ -7,6 +7,45 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.88] - 2025-12-12
+
+### Bug Fixes
+- Removed loading in create booking.
+
+
+## [2.6.87] - 2025-12-12
+
+### Bug Fixes
+- Removed loading in create booking.
+
+
+## [2.6.86] - 2025-12-12
+
+### Bug Fixes
+- Removed loading in create booking.
+
+
+## [2.6.85] - 2025-12-12
+
+### Bug Fixes
+- Address not selecting issue fixed in create booking.
+
+
+## [2.6.84] - 2025-12-12
+
+### Improvements
+- Removed loading in Search location.
+
+
+## [2.6.83] - 2025-12-11
+
+### New
+- Cash Advance Api integrated.
+
+### Improvements
+- Trip details UI updated.
+
+
 ## [2.6.82] - 2025-12-03
 
 ### Bug Fixes
