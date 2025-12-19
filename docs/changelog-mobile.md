@@ -7,6 +7,34 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.92] - 2025-12-19
+
+### Improvements
+- Default value added for date and purpose field in Add Cash Advance.
+
+
+## [2.6.91] - 2025-12-19
+
+### Bug Fixed
+- Autocomplete issue in add manpower fixed.
+
+
+## [2.6.90] - 2025-12-17
+
+### New
+- Enabled tickets feature.
+
+### Bug Fixes
+- Data refresh issue after add ticket fixed.
+
+
+## [2.6.89] - 2025-12-16
+
+### Improvements
+- Autocomplete for name and number added in Added Manpower.
+- Removed seconds from Date in Booking Dashboard.
+
+
 ## [2.6.88] - 2025-12-12
 
 ### Bug Fixes
