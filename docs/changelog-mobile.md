@@ -7,6 +7,18 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.94] - 2025-12-26
+
+### Improvements
+- Multiline option added for Document upload in Proof upload.
+
+
+## [2.6.93] - 2025-12-19
+
+### Improvements
+- Updated Pod Report back navigation UI.
+
+
 ## [2.6.92] - 2025-12-19
 
 ### Improvements
