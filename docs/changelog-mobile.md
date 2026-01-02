@@ -7,6 +7,33 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.98] - 2026-01-02
+
+### Improvements
+- Now Subject of the ticket should be maximum of 2 lines.
+
+### Bug Fixed
+- Full Subject not showing in the ticket details page fixed.
+
+
+## [2.6.97] - 2026-01-02
+
+### New
+- Updated the Pending Invoices Tab.
+
+
+## [2.6.96] - 2026-01-02
+
+### Improvements
+- Fixed Search location issue.
+
+
+## [2.6.95] - 2025-12-30
+
+### Improvements
+- Create booking feature converted from provider to bloc.
+
+
 ## [2.6.94] - 2025-12-26
 
 ### Improvements
