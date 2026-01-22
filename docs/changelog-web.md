@@ -5,6 +5,32 @@ sidebar_position: 3
 
 Here you can track all important updates, fixes, and new features in the web version.
 
+## [2.0.18] - 2026-01-20
+
+### New
+- Implemented DHL API integration originating from TCMS
+- Enabled invoice printing from the Invoice Summary tab
+
+### Bug Fixes
+- Updated the Customer Aging Report to allow download even after a customer name change
+
+## [2.0.17] - 2026-01-05
+
+### New
+- Enhanced the trip manifest by introducing additional fields
+
+### Bug Fixes
+- Fixed an issue causing incorrect output during OR printing
+
+## [2.0.16] - 2025-12-22
+
+### New
+- Enhanced quotation handling to support mapping up to the company name level
+- Rearranged the booking fields for quicker booking
+
+### Bug Fixes
+- Updated the booking form to allow commas in the Do Ref field
+
 ## [2.0.15] - 2025-12-09
 
 ### New
