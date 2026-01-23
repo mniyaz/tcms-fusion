@@ -7,6 +7,121 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.114] - 2026-01-23
+
+### Improvements
+- Automatically create a single card in driver proof upload.
+- Strongly validated duplicate document id should not be there in driver proof upload/
+
+
+## [2.6.113] - 2026-01-22
+
+### Improvements
+- Trip details and trip details tab ui updated.
+
+
+## [2.6.112] - 2026-01-22
+
+### New
+- Now driver can bulk upload the Proofs.
+
+
+## [2.6.111] - 2026-01-21
+
+### Improvements
+- Edit, add icon modified in Invoice detail screen.
+
+### Bug Fixed
+- Invoice loading issue fixed.
+- Session expired issue resolved.
+- While submitting, the invalid date format exception is fixed.
+
+
+## [2.6.110] - 2026-01-21
+
+### Improvements
+- UI updated for trip details tab.
+- Driver Proof uploading ui upload and timer added.
+
+
+## [2.6.109] - 2026-01-20
+
+### Bug Fixed
+- Auto refresh in driver proof upload if data is updated feature issue fixed.
+
+
+## [2.6.108] - 2026-01-20
+
+### Improvements
+- UI updated for trip details tab.
+
+
+## [2.6.107] - 2026-01-20
+
+### Improvements
+- Changelog updated.
+
+
+## [2.6.106] - 2026-01-20
+
+### New
+- Auto refresh in driver proof upload if data is updated feature added.
+
+
+## [2.6.105] - 2026-01-14
+
+### New
+- Driver proof uploading screen added.
+
+
+## [2.6.104] - 2026-01-14
+
+### Improvements
+- Invoice details ui updated .
+- Tax calculation is added.
+- Editable field is modified.
+- Add and delete icon functionality is added.
+
+
+## [2.6.103] - 2026-01-14
+
+### Improvements
+- Duplicate Pod and Pop Id removed.
+- Date and remarks should be global in create booking module.
+- Default value for status dropdown in driver proof upload added.
+- Subject text field maximum line is set to one in Add ticket.
+
+### Bug Fixed
+- Date and remarks TextField not showing in book details issue fixed.
+
+### New
+- Pickup and delivery tab page added for trip details.
+
+
+## [2.6.102] - 2026-01-05
+
+### Improvements
+- Pending invoice disabled.
+
+
+## [2.6.101] - 2026-01-05
+
+### Improvements
+- Search location place list selection issue fixed.
+
+
+## [2.6.100] - 2026-01-05
+
+### Bug Fixed
+- App Crash in Booking issue fixed
+
+
+## [2.6.99] - 2026-01-05
+
+### Improvements
+- Analytics Feature Disabled.
+
+
 ## [2.6.98] - 2026-01-02
 
 ### Improvements
