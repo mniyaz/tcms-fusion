@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-## 📄 Create a Dedicated Booking 
+# 📄 Create a Dedicated Booking 
 
 ### 🎯 Purpose 
 
