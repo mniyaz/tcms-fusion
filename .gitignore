@@ -1,0 +1,35 @@
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.vs/Fusion_Project/FileContentIndex/04ac0129-71ca-4784-984f-179da4777946.vsidx
+/.vs/Fusion_Project/FileContentIndex/20580ee0-386b-471b-a0e9-8c6a32648ee1.vsidx
+/.vs/Fusion_Project/FileContentIndex/7d96f9b0-c148-4761-81a7-6f4f1e1c940b.vsidx
+/.vs/Fusion_Project/FileContentIndex/c97c3caa-52eb-4b1c-a205-80d0dc320707.vsidx
+/.vs/Fusion_Project/FileContentIndex/f4867d24-d9b7-4baf-8aee-8a8da8f59e14.vsidx
+/.vs/Fusion_Project/v17/.wsuo
+/.vs/Fusion_Project/v17/DocumentLayout.backup.json
+/.vs/Fusion_Project/v17/DocumentLayout.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/yarn.lock
+/.vs/Fusion_Project/FileContentIndex/92330b0c-2d14-4b8d-bb60-d5124e9c704c.vsidx
+/.vs/Fusion_Project/FileContentIndex/b2fc2094-a0e8-4feb-8f94-a6ba25c73f50.vsidx
+/.vs/Fusion_Project/FileContentIndex/c222189f-8588-4456-b738-306dd9a49fec.vsidx
+*.vsidx
