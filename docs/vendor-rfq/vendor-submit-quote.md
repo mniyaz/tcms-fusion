@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Submitting a quote (for vendors)
 
 This page is for **vendors** who receive an RFQ link (e.g. by WhatsApp) and need to submit their quote. You do **not** need to log in or have an account—you only need the link sent by the planner.

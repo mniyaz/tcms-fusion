@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # What is Vendor RFQ and how does it work?
 
 This page explains the **purpose** of the Vendor RFQ module and **how it works** for planners and vendors.

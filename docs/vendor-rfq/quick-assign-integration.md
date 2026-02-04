@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Completing the assignment after accepting a quote
 
 After you **accept a quote** on the RFQ Dashboard, you can complete the assignment on the **Quick Assign** (Planning) page. The system **pre-fills** the winning vendor’s details so you only need to confirm and assign.

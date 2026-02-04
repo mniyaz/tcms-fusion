@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Using the RFQ Dashboard
 
 This page explains how to use the **RFQ Dashboard** as a planner: create an RFQ, send it to vendors, view quotes, cancel an RFQ, accept a quote, and complete the assignment.
