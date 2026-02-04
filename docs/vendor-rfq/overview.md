@@ -44,6 +44,6 @@ The Vendor RFQ module supports this flow inside TCMS Booking: you create one **R
 
 ## Next steps
 
-- **[Using the RFQ Dashboard](/vendor-rfq/dashboard)** – Detailed steps to create RFQs, send to vendors, and accept a quote.
-- **[Submitting a quote (for vendors)](/vendor-rfq/vendor-submit-quote)** – What vendors see and how to fill and submit the form.
-- **[Completing the assignment](/vendor-rfq/quick-assign-integration)** – What is pre-filled in Quick Assign and how to confirm and assign.
+- **[Using the RFQ Dashboard](/docs/vendor-rfq/dashboard)** – Detailed steps to create RFQs, send to vendors, and accept a quote.
+- **[Submitting a quote (for vendors)](/docs/vendor-rfq/vendor-submit-quote)** – What vendors see and how to fill and submit the form.
+- **[Completing the assignment](/docs/vendor-rfq/quick-assign-integration)** – What is pre-filled in Quick Assign and how to confirm and assign.

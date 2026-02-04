@@ -98,5 +98,5 @@ You can send the vendor link in three ways:
 
 ## Next steps
 
-- **[Submitting a quote (for vendors)](/vendor-rfq/vendor-submit-quote)** – What vendors see and how they submit.  
-- **[Completing the assignment](/vendor-rfq/quick-assign-integration)** – What is pre-filled in Quick Assign and how to confirm and assign.
+- **[Submitting a quote (for vendors)](/docs/vendor-rfq/vendor-submit-quote)** – What vendors see and how they submit.  
+- **[Completing the assignment](/docs/vendor-rfq/quick-assign-integration)** – What is pre-filled in Quick Assign and how to confirm and assign.
