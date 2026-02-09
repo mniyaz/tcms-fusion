@@ -54,7 +54,7 @@ Use this to bring in new statuses/reasons or to fill gaps in translations.
 
 ## AI Assistant
 
-When `VITE_OPENAI_API_KEY` is set in your `.env`, the **AI Assistant** panel is available. It provides:
+The **AI Assistant** panel is available. It provides:
 
 ### Translate selection
 

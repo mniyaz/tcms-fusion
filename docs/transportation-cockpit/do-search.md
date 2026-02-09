@@ -45,7 +45,7 @@ You can use `*` in the DO number field to match patterns:
 
 ## AI Assistant
 
-When `VITE_OPENAI_API_KEY` is set, the **AI Assistant** panel is available (open by default). You can type a natural-language question and click **Interpret & Search**; the app will:
+The **AI Assistant** panel is available (open by default). You can type a natural-language question and click **Interpret & Search**; the app will:
 
 - Parse your query for DO number, date range, and customer.
 - Fill the search form and run the same DO search (same 30-day and non-empty rules apply).
