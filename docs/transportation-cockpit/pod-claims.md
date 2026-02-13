@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📘 Uploading POD & Generating PettyCash
+# POD & PettyCash
 
 ### 🎯 Purpose
 
