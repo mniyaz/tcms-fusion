@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📄 Generating Payslip in TCMS 
+# Generating Payslip in TCMS 
 
 ### 🎯 Purpose 
 

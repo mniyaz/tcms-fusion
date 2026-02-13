@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📘 Customized Invoice Numbers
+# Customized Invoice Numbers
 
 The application provides customers with the ability to define **customized invoice number formats.** This ensures invoices are uniquely identifiable while aligning with company branding, compliance requirements, or personal preferences.
 

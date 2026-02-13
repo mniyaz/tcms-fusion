@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📅 Simple Booking
+# Simple Booking
 
 Welcome to the **Simple Booking** feature! This guide will walk you through the process of creating a booking seamlessly.
 

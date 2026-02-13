@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 🚚 Create a Truck Maintenance
+# Create Truck Maintenance
 
 The Truck Maintenance module is designed to **record, track, and manage all service and repair activities** for trucks. 
 
