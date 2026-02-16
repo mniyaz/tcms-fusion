@@ -7,6 +7,67 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.124] - 2026-02-16
+
+### Improvements
+- Driver Proof Upload status and ui updated.
+
+
+## [2.6.123] - 2026-02-11
+
+### Bug Fixed
+- Issue in Create Booking fixed.
+
+
+## [2.6.122] - 2026-02-10
+
+### New
+- Driver Proof Upload status updated for Marketing.
+
+
+## [2.6.121] - 2026-02-10
+
+### Improvements
+- Hides goods description in create booking.
+
+
+## [2.6.120] - 2026-02-06
+
+### Improvements
+- Automatically apply co number in the driver proof upload if saved in trip details.
+
+
+## [2.6.119] - 2026-01-30
+
+### New
+- In Driver POD upload, added Delivery Count field for Partial Delivery status.
+
+
+## [2.6.118]- 2026-01-29
+
+### Improvements
+- In invoice detail screen, the dummy invoice no is removed.
+
+
+## [2.6.117]- 2026-01-28
+
+### Improvements
+- In the invoice dashboard ,filter fields now appear horizontally once a filter is selected.
+- In the Generated tab, invoices are now selectable.
+- In the Generated tab, generated invoices are now editable and can be updated.
+
+## [2.6.116] - 2026-01-28
+
+### Improvements
+- In trip details when you swipe the trip details page won't reload.
+
+
+## [2.6.115] - 2026-01-27
+
+### Improvements
+- In Driver POP and POD upload screens, all document checklist items are now selected by default.
+
+
 ## [2.6.114] - 2026-01-23
 
 ### Improvements
