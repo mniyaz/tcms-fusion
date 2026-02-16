@@ -21,3 +21,21 @@
   to = "/.netlify/functions/logout"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/api/create-docs-user"
+  to = "/.netlify/functions/create-docs-user"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/delete-docs-user"
+  to = "/.netlify/functions/delete-docs-user"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/list-docs-users"
+  to = "/.netlify/functions/list-docs-users"
+  status = 200
+  force = true

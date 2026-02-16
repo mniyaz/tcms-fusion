@@ -1,0 +1,82 @@
+---
+sidebar_position: 102
+title: Set env vars with Netlify CLI
+---
+
+<AuthGate>
+
+# Set environment variables with Netlify CLI
+
+You can push your local `.env` to Netlify using the [Netlify CLI](https://cli.netlify.com/).
+
+## Prerequisites
+
+1. **Install Netlify CLI** (if needed):
+   ```bash
+   npm install -g netlify-cli
+   ```
+   Or use without installing: `npx netlify ...`
+
+2. **Log in** (once):
+   ```bash
+   netlify login
+   ```
+
+3. **Link this repo to your Netlify site** (once, from project root):
+   ```bash
+   netlify link
+   ```
+   Choose your team and site when prompted.
+
+## Import all variables from `.env`
+
+From the project root, run:
+
+```bash
+npm run netlify:env
+```
+
+Or directly:
+
+```bash
+netlify env:import .env
+```
+
+This reads your `.env` file and sets each variable in Netlify for the linked site. You can choose scope (e.g. **All** or **Functions**) and deploy context when prompted.
+
+## Other useful commands
+
+- **List variables** (names only; values are hidden):
+  ```bash
+  npm run netlify:env:list
+  # or: netlify env:list
+  ```
+
+- **Set one variable**:
+  ```bash
+  netlify env:set VARIABLE_NAME "value"
+  ```
+
+- **Get one variable's value**:
+  ```bash
+  netlify env:get VARIABLE_NAME
+  ```
+
+- **Remove a variable**:
+  ```bash
+  netlify env:unset VARIABLE_NAME
+  ```
+
+## Variables used by this project
+
+| Variable | Purpose |
+|----------|--------|
+| `DOCS_ADMIN_SECRET` | Bearer token for create/delete/list docs-user APIs |
+| `DOCS_SESSION_SECRET` | Signs the session cookie after login |
+| `DOCS_USERNAME` / `DOCS_PASSWORD` | Optional fallback login when Hygraph is not used |
+| `HYGRAPH_ENDPOINT` | Hygraph Content API URL |
+| `HYGRAPH_TOKEN` | Hygraph API token (read/create/delete Gituser) |
+
+Ensure these are set in Netlify (e.g. via `netlify env:import .env`) so the deployed site and serverless functions can authenticate and use Hygraph.
+
+</AuthGate>

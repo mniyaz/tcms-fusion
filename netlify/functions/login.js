@@ -1,4 +1,9 @@
 const crypto = require('crypto');
+const {
+  getDocsUserByUsername,
+  verifyPassword,
+  getHygraphConfig,
+} = require('./lib/hygraph');
 
 const COOKIE_NAME = 'docs_sess';
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
@@ -10,13 +15,17 @@ function createSignedCookie(secret) {
   return `${encoded}.${sig}`;
 }
 
+function checkEnvAuth(user, pass) {
+  const username = process.env.DOCS_USERNAME || 'admin';
+  const password = process.env.DOCS_PASSWORD || 'docs';
+  return user === username && pass === password;
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: '' };
   }
 
-  const username = process.env.DOCS_USERNAME || 'admin';
-  const password = process.env.DOCS_PASSWORD || 'docs';
   const secret = process.env.DOCS_SESSION_SECRET || 'change-me-in-production';
 
   let body;
@@ -31,7 +40,31 @@ exports.handler = async (event) => {
   }
 
   const { user, pass } = body;
-  if (user !== username || pass !== password) {
+  if (!user || !pass) {
+    return {
+      statusCode: 401,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ok: false, error: 'Username and password required' }),
+    };
+  }
+
+  let valid = false;
+  const { endpoint } = getHygraphConfig();
+  if (endpoint) {
+    try {
+      const docUser = await getDocsUserByUsername(String(user).trim());
+      if (docUser && docUser.passwordHash && docUser.passwordSalt) {
+        valid = verifyPassword(pass, docUser.passwordSalt, docUser.passwordHash);
+      }
+    } catch (e) {
+      console.error('Hygraph login error:', e.message);
+      // Fall through to env fallback (e.g. when token has no permission for Gituser model)
+    }
+  }
+  if (!valid) {
+    valid = checkEnvAuth(user, pass);
+  }
+  if (!valid) {
     return {
       statusCode: 401,
       headers: { 'Content-Type': 'application/json' },

@@ -3,7 +3,11 @@
  * Sidebar will hide these when the user is not signed in.
  * Add more slugs here to gate additional docs.
  */
-export const AUTH_ONLY_DOC_SLUGS = ['preferences-storage-and-save-api'];
+export const AUTH_ONLY_DOC_SLUGS = [
+  'preferences-storage-and-save-api',
+  'netlify-env-cli',
+  'hygraph-docs-users',
+];
 
 export function isAuthOnlyDocItem(item) {
   if (item.type === 'link' && item.href) {

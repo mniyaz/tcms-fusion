@@ -34,3 +34,4 @@ yarn-error.log*
 /.vs/Fusion_Project/FileContentIndex/b2fc2094-a0e8-4feb-8f94-a6ba25c73f50.vsidx
 /.vs/Fusion_Project/FileContentIndex/c222189f-8588-4456-b738-306dd9a49fec.vsidx
 *.vsidx
+.env.example

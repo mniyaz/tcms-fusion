@@ -1,0 +1,118 @@
+---
+sidebar_position: 101
+title: Docs users (Hygraph)
+---
+
+<AuthGate>
+
+# Docs users with Hygraph
+
+Docs login can use **Hygraph** as the user store: create and delete users in Hygraph, and log in with username/password. If Hygraph is not configured, the fallback is the single `DOCS_USERNAME` / `DOCS_PASSWORD` from environment variables.
+
+## What you need
+
+1. **A Hygraph project** – [hygraph.com](https://hygraph.com), create a project.
+2. **A content model** for docs users (see schema below).
+3. **Environment variables** in Netlify (and in `.env` for local `netlify dev`):
+   - `HYGRAPH_ENDPOINT` – Your Hygraph Content API URL (e.g. `https://api-xxx.region.hygraph.com/v2/your-project-id`). Find it in Hygraph: **Project settings → API Access → Content API**.
+   - `HYGRAPH_TOKEN` – A **Permanent Auth Token** with:
+     - **Read** access to the DocsUser model (for login).
+     - **Create** and **Delete** access to the DocsUser model (for create/delete user APIs).
+   - `DOCS_ADMIN_SECRET` – A secret string you choose. Used to protect the create/delete/list user APIs (Bearer token).
+   - `DOCS_SESSION_SECRET` – Still required to sign the session cookie after login.
+
+## Hygraph schema: DocsUser model
+
+In Hygraph, create a model with **API ID** exactly: **`DocsUser`**.
+
+Add these fields:
+
+| Display name   | API ID         | Type   | Required | Unique |
+|----------------|----------------|--------|----------|--------|
+| Username       | `username`     | String | Yes      | Yes    |
+| Password hash  | `passwordHash` | String | Yes      | No     |
+| Password salt  | `passwordSalt` | String | Yes      | No     |
+
+- **Username**: single line text, required, unique.
+- **Password hash** and **Password salt**: single line text (or multi-line), required. They are set by the API; you don't need to edit them in the UI.
+
+If your project uses **stages** (draft/published), ensure the token has access to the stage you use, and consider publishing new users after creation if they must be visible to the Content API.
+
+## Create a user
+
+**Endpoint:** `POST /api/create-docs-user`  
+**Auth:** `Authorization: Bearer <DOCS_ADMIN_SECRET>`
+
+**Body:**
+
+```json
+{
+  "username": "jane",
+  "password": "secure-password"
+}
+```
+
+**Example (curl):**
+
+```bash
+curl -X POST https://your-site.netlify.app/api/create-docs-user \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_DOCS_ADMIN_SECRET" \
+  -d '{"username":"jane","password":"secure-password"}'
+```
+
+Response: `{ "ok": true, "id": "...", "username": "jane" }`.  
+Passwords are hashed (scrypt) before being stored in Hygraph; only the hash and salt are saved.
+
+## Delete a user
+
+**Endpoint:** `POST /api/delete-docs-user`  
+**Auth:** `Authorization: Bearer <DOCS_ADMIN_SECRET>`
+
+**Body (by id):**
+
+```json
+{ "id": "hygraph-document-id" }
+```
+
+**Body (by username):**
+
+```json
+{ "username": "jane" }
+```
+
+**Example (curl):**
+
+```bash
+curl -X POST https://your-site.netlify.app/api/delete-docs-user \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_DOCS_ADMIN_SECRET" \
+  -d '{"username":"jane"}'
+```
+
+## List users
+
+**Endpoint:** `GET /api/list-docs-users`  
+**Auth:** `Authorization: Bearer <DOCS_ADMIN_SECRET>`
+
+Returns `{ "ok": true, "users": [ { "id": "...", "username": "..." }, ... ] }`. Use this to get `id` values for delete if needed.
+
+## Login flow
+
+1. User submits username and password on `/login`.
+2. The login function:
+   - If Hygraph is configured: fetches the DocsUser by `username`, verifies the password with the stored salt/hash, then sets the session cookie.
+   - If not: checks against `DOCS_USERNAME` / `DOCS_PASSWORD` and sets the session cookie.
+3. Session is stored in an HTTP-only cookie signed with `DOCS_SESSION_SECRET`.
+
+## Summary of env vars
+
+| Variable               | Used for                          |
+|------------------------|-----------------------------------|
+| `HYGRAPH_ENDPOINT`     | Hygraph Content API URL          |
+| `HYGRAPH_TOKEN`        | Hygraph API token (read + create/delete DocsUser) |
+| `DOCS_ADMIN_SECRET`    | Bearer token for create/delete/list user APIs     |
+| `DOCS_SESSION_SECRET`  | Signing the session cookie       |
+| `DOCS_USERNAME` / `DOCS_PASSWORD` | Fallback when Hygraph is not set |
+
+</AuthGate>
