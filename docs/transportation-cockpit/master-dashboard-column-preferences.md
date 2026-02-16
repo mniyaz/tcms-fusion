@@ -67,12 +67,3 @@ Click **Reset Columns** to restore:
 - default visible columns
 - default ordering
 
-## Persistence
-
-Column preferences are saved:
-
-- locally in `localStorage.preferences`
-- to backend via `savePreferences` API
-
-So after next login, user-specific column settings are restored.
-
