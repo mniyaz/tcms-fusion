@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 🧾 Create Quotation
+# Create Quotation
 
 This guide walks you through the steps to create a customer quotation within the System Master module.
 

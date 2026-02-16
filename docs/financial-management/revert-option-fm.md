@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 🧾 Revert Option
+# Revert Option
 
 The Revert feature in the Financial Management module allows users to undo certain transactions and restore them to their original data tables. This ensures flexibility and accuracy in managing financial records.
 

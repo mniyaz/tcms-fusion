@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 🧾 Cancel Invoice
+# Cancel Invoice
 
 This guide explains how to cancel an invoice within the Invoicing module and what happens after cancellation.
 

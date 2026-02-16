@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 🧾 📘 Bulk Expenses
+# Bulk Expenses
 
 This guide walks you through the steps to enter, view, and edit bulk expenses in the system.
 

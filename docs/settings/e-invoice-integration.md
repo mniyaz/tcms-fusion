@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 📘 E-Invoice Integration
+# E-Invoice Integration
 
 This guide explains how to integrate **TCMS** with the **Malaysian LHDN e-Invoice Portal**.
 

@@ -16,8 +16,8 @@ function createSignedCookie(secret) {
 }
 
 function checkEnvAuth(user, pass) {
-  const username = process.env.DOCS_USERNAME || 'admin';
-  const password = process.env.DOCS_PASSWORD || 'docs';
+  const username = (process.env.DOCS_USERNAME || 'admin').trim();
+  const password = (process.env.DOCS_PASSWORD || 'docs').trim();
   return user === username && pass === password;
 }
 
@@ -52,7 +52,7 @@ exports.handler = async (event) => {
   let valid = false;
 
   // Prefer env fallback when username matches DOCS_USERNAME (ensures production login works if env is set)
-  const envUser = process.env.DOCS_USERNAME;
+  const envUser = (process.env.DOCS_USERNAME || '').trim();
   if (envUser && username === envUser) {
     valid = checkEnvAuth(user, pass);
   }

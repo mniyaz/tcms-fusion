@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📄 Blank Invoice
+# Blank Invoice
 
 This guide explains how to manually generate a blank invoice for a customer in the application. This feature is useful for ad-hoc billing that is not tied to a specific booking or shipment.
 
