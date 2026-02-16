@@ -28,7 +28,7 @@ When clicked, it opens a spotlight-style modal with blur background and global l
 
 1. Drag the floating icon to any screen position.
 2. Click the icon to open search.
-3. Type at least **3 characters** (booking id, POD id, POP id, invoice id).
+3. Type at least **3 characters** (booking id, Job ID, POD id, POP id, invoice id).
 4. Click a result to navigate.
 
 ## Position memory
@@ -36,13 +36,6 @@ When clicked, it opens a spotlight-style modal with blur background and global l
 - The floating icon position is saved in cookies.
 - On next visit/login, it appears at the same saved location.
 
-## Search API
-
-The modal calls:
-
-`GET /rest/tcdashboard/globalSearch/{QUERY}/{BRANCH}/{USER}/{AUTH_KEY}`
-
-Current UI uses branch `default`.
 
 ### Minimum query length
 
@@ -51,7 +44,7 @@ Current UI uses branch `default`.
 
 ## Result actions
 
-- **Booking ID** click:
+- **Booking ID(JOB ID)** click:
   - Opens edit booking page: `/booking/{bookingId}`
 
 - **POD ID** click:
