@@ -79,4 +79,12 @@ This reads your `.env` file and sets each variable in Netlify for the linked sit
 
 Ensure these are set in Netlify (e.g. via `netlify env:import .env`) so the deployed site and serverless functions can authenticate and use Hygraph.
 
+## Production login not working
+
+If **niyaz** / **niyaz123** (or your env fallback) works locally but not in production:
+
+1. **Check scope** – In Netlify: **Site settings → Environment variables**. For `DOCS_USERNAME`, `DOCS_PASSWORD`, `DOCS_SESSION_SECRET`, and any Hygraph vars, the **scope** must include **Functions** (or **All**). If a variable is only scoped to "Builds", the login function will not see it at runtime.
+2. **Re-import** – From the project root run `npm run netlify:env:set` (or `netlify env:import .env`), then in the Netlify UI ensure each variable has **Functions** (or **All**) selected under "Scopes".
+3. **Redeploy** – After changing env vars, trigger a new deploy (e.g. push a commit or "Clear cache and deploy site") so functions use the latest values.
+
 </AuthGate>

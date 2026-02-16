@@ -17,6 +17,12 @@
   force = true
 
 [[redirects]]
+  from = "/api/auth-diagnostic"
+  to = "/.netlify/functions/auth-diagnostic"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/logout"
   to = "/.netlify/functions/logout"
   status = 200

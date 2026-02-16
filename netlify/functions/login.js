@@ -48,17 +48,25 @@ exports.handler = async (event) => {
     };
   }
 
+  const username = String(user).trim();
   let valid = false;
-  const { endpoint } = getHygraphConfig();
-  if (endpoint) {
-    try {
-      const docUser = await getDocsUserByUsername(String(user).trim());
-      if (docUser && docUser.passwordHash && docUser.passwordSalt) {
-        valid = verifyPassword(pass, docUser.passwordSalt, docUser.passwordHash);
+
+  // Prefer env fallback when username matches DOCS_USERNAME (ensures production login works if env is set)
+  const envUser = process.env.DOCS_USERNAME;
+  if (envUser && username === envUser) {
+    valid = checkEnvAuth(user, pass);
+  }
+  if (!valid) {
+    const { endpoint } = getHygraphConfig();
+    if (endpoint) {
+      try {
+        const docUser = await getDocsUserByUsername(username);
+        if (docUser && docUser.passwordHash && docUser.passwordSalt) {
+          valid = verifyPassword(pass, docUser.passwordSalt, docUser.passwordHash);
+        }
+      } catch (e) {
+        console.error('Hygraph login error:', e.message);
       }
-    } catch (e) {
-      console.error('Hygraph login error:', e.message);
-      // Fall through to env fallback (e.g. when token has no permission for Gituser model)
     }
   }
   if (!valid) {
