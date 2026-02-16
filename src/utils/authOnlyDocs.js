@@ -3,7 +3,9 @@
  * Sidebar will hide these when the user is not signed in.
  * Add more slugs here to gate additional docs.
  */
+// Slugs that require login. Sidebar hides these (and any category containing only these).
 export const AUTH_ONLY_DOC_SLUGS = [
+  'developer', // entire Developer menu (docs/developer/*)
   'preferences-storage-and-save-api',
   'netlify-env-cli',
   'hygraph-docs-users',
