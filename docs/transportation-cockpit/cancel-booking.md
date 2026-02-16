@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ❌ Cancel Booking
+# Cancel Booking
 
 This guide will walk you through the steps for cancelling a booking in the application. Depending on the type of **cancellation** (non-chargeable or chargeable), the steps and processes may vary slightly.
 

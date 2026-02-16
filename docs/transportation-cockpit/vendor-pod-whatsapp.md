@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📦 WhatsApp Vendor POD upload
+# WhatsApp Vendor POD upload
 
 This guide explains how vendors can **upload Proof of Delivery (POD)** documents using a secure WhatsApp link. It is designed to make the process quick, mobile-friendly, and hassle-free for vendor drivers.
 
