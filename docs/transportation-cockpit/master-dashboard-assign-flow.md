@@ -6,11 +6,11 @@ This page explains the new Assign button behavior in Master Dashboard.
 
 Assign button placement in Master Dashboard:
 
-![Assign button before POD](./images/master-dashboard-main.png)
+![Assign button before POD](/img/master_dashboard_assign.png)
 
 Multi-select planning route (Route Optimization page):
 
-![Route optimization planning flow](./images/master-dashboard-assign-multi-plan.png)
+![Route optimization planning flow](/img/mdashboard_multi_assign.png)
 
 > Note: A dedicated single-row quick-assign modal screenshot is still pending from a data-connected session.
 
