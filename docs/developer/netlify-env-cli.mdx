@@ -9,7 +9,7 @@ title: Set env vars with Netlify CLI
 
 You can push your local `.env` to Netlify using the [Netlify CLI](https://cli.netlify.com/).
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 1. **Install Netlify CLI** (if needed):
    ```bash
@@ -28,7 +28,7 @@ You can push your local `.env` to Netlify using the [Netlify CLI](https://cli.ne
    ```
    Choose your team and site when prompted.
 
-## Import all variables from `.env`
+## Import all variables from `.env` {#import-all-variables-from-env}
 
 From the project root, run:
 
@@ -44,7 +44,7 @@ netlify env:import .env
 
 This reads your `.env` file and sets each variable in Netlify for the linked site. You can choose scope (e.g. **All** or **Functions**) and deploy context when prompted.
 
-## Other useful commands
+## Other useful commands {#other-useful-commands}
 
 - **List variables** (names only; values are hidden):
   ```bash
@@ -67,7 +67,7 @@ This reads your `.env` file and sets each variable in Netlify for the linked sit
   netlify env:unset VARIABLE_NAME
   ```
 
-## Variables used by this project
+## Variables used by this project {#variables-used-by-this-project}
 
 | Variable | Purpose |
 |----------|--------|
@@ -77,11 +77,11 @@ This reads your `.env` file and sets each variable in Netlify for the linked sit
 | `HYGRAPH_ENDPOINT` | Hygraph Content API URL |
 | `HYGRAPH_TOKEN` | Hygraph API token (read/create/delete Gituser) |
 
-Ensure these are set in Netlify (e.g. via `netlify env:import .env`) so the deployed site and serverless functions can authenticate and use Hygraph.
+Ensure these are set in Netlify (e.g. via `netlify env:import .env`) so the deployed site and serverless functions can authenticate and use Hygraph. Do not put real credentials in docs or scripts—Netlify’s secrets scanner will fail the build if it finds them in the repo or build output.
 
-## Production login not working
+## Production login not working {#production-login-not-working}
 
-If **niyaz** / **niyaz123** (or your env fallback) works locally but not in production:
+If your env fallback credentials work locally but not in production:
 
 1. **Check scope** – In Netlify: **Site settings → Environment variables**. For `DOCS_USERNAME`, `DOCS_PASSWORD`, `DOCS_SESSION_SECRET`, and any Hygraph vars, the **scope** must include **Functions** (or **All**). If a variable is only scoped to "Builds", the login function will not see it at runtime.
 2. **Re-import** – From the project root run `npm run netlify:env:set` (or `netlify env:import .env`), then in the Netlify UI ensure each variable has **Functions** (or **All**) selected under "Scopes".

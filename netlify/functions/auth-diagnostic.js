@@ -15,10 +15,11 @@ exports.handler = async (event) => {
     statusCode: 200,
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
+      deploy_context: process.env.CONTEXT || '(not set)',
       env_fallback_configured: !!(envUser && envPass),
       hygraph_configured: hygraph,
       session_secret_set: !!secret,
-      hint: 'If env_fallback_configured is false, set DOCS_USERNAME and DOCS_PASSWORD in Netlify with scope including Functions, then redeploy.',
+      hint: !envUser && !envPass ? 'Set DOCS_USERNAME and DOCS_PASSWORD in Netlify (scope: Functions), then trigger a new production deploy. Env vars are injected at deploy time.' : undefined,
     }),
   };
 };

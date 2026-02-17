@@ -2,7 +2,7 @@
 /**
  * Generate passwordHash and passwordSalt for a DocsUser (same algo as Netlify login).
  * Usage: node scripts/hash-docs-password.js [username] [password]
- *        PASSWORD=mysecret node scripts/hash-docs-password.js niyaz
+ *        PASSWORD=mysecret node scripts/hash-docs-password.js myuser
  */
 const crypto = require('crypto');
 const SCRYPT_KEY_LEN = 64;

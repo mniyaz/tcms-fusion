@@ -9,13 +9,13 @@ title: Preferences Storage and Save API
 
 This page documents how UI preferences are loaded, stored, and saved.
 
-## Screenshot
+## Screenshot {#screenshot}
 
 Example of persisted table preference outcome (custom columns retained):
 
 ![Persisted table preferences example](../transportation-cockpit/images/master-dashboard-columns-invoice-userid-enabled.png)
 
-## Login preference load
+## Login preference load {#login-preference-load}
 
 On login, if backend response includes:
 
@@ -25,7 +25,7 @@ it is saved into local storage:
 
 - `localStorage.setItem("preferences", result.preferences)`
 
-## Preference key strategy
+## Preference key strategy {#preference-key-strategy}
 
 Preferences use table keys defined in:
 
@@ -37,7 +37,7 @@ Example key:
 
 This key maps to table-specific settings in the global JSON.
 
-## Local preference read/write
+## Local preference read/write {#local-preference-readwrite}
 
 Utility:
 
@@ -49,7 +49,7 @@ Capabilities:
 - Read table-level settings by key path
 - Update table-level settings by key path
 
-## Backend save endpoint
+## Backend save endpoint {#backend-save-endpoint}
 
 API helper:
 
@@ -69,14 +69,14 @@ Request body:
 }
 ```
 
-## Master Dashboard saved fields
+## Master Dashboard saved fields {#master-dashboard-saved-fields}
 
 For `tables.masterDashboard`, current persisted fields:
 
 - `columnOrder`
 - `visibleColumnIds`
 
-## Save trigger
+## Save trigger {#save-trigger}
 
 Preferences are saved when user changes:
 

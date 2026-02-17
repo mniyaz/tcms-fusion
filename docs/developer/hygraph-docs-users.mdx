@@ -9,7 +9,7 @@ title: Docs users (Hygraph)
 
 Docs login can use **Hygraph** as the user store: create and delete users in Hygraph, and log in with username/password. If Hygraph is not configured, the fallback is the single `DOCS_USERNAME` / `DOCS_PASSWORD` from environment variables.
 
-## What you need
+## What you need {#what-you-need}
 
 1. **A Hygraph project** – [hygraph.com](https://hygraph.com), create a project.
 2. **A content model** for docs users (see schema below).
@@ -21,7 +21,7 @@ Docs login can use **Hygraph** as the user store: create and delete users in Hyg
    - `DOCS_ADMIN_SECRET` – A secret string you choose. Used to protect the create/delete/list user APIs (Bearer token).
    - `DOCS_SESSION_SECRET` – Still required to sign the session cookie after login.
 
-## Hygraph schema: DocsUser model
+## Hygraph schema: DocsUser model {#hygraph-schema-docsuser-model}
 
 In Hygraph, create a model with **API ID** exactly: **`DocsUser`**.
 
@@ -38,7 +38,7 @@ Add these fields:
 
 If your project uses **stages** (draft/published), ensure the token has access to the stage you use, and consider publishing new users after creation if they must be visible to the Content API.
 
-## Create a user
+## Create a user {#create-a-user}
 
 **Endpoint:** `POST /api/create-docs-user`  
 **Auth:** `Authorization: Bearer <DOCS_ADMIN_SECRET>`
@@ -64,7 +64,7 @@ curl -X POST https://your-site.netlify.app/api/create-docs-user \
 Response: `{ "ok": true, "id": "...", "username": "jane" }`.  
 Passwords are hashed (scrypt) before being stored in Hygraph; only the hash and salt are saved.
 
-## Delete a user
+## Delete a user {#delete-a-user}
 
 **Endpoint:** `POST /api/delete-docs-user`  
 **Auth:** `Authorization: Bearer <DOCS_ADMIN_SECRET>`
@@ -90,14 +90,14 @@ curl -X POST https://your-site.netlify.app/api/delete-docs-user \
   -d '{"username":"jane"}'
 ```
 
-## List users
+## List users {#list-users}
 
 **Endpoint:** `GET /api/list-docs-users`  
 **Auth:** `Authorization: Bearer <DOCS_ADMIN_SECRET>`
 
 Returns `{ "ok": true, "users": [ { "id": "...", "username": "..." }, ... ] }`. Use this to get `id` values for delete if needed.
 
-## Login flow
+## Login flow {#login-flow}
 
 1. User submits username and password on `/login`.
 2. The login function:
@@ -105,7 +105,7 @@ Returns `{ "ok": true, "users": [ { "id": "...", "username": "..." }, ... ] }`. 
    - If not: checks against `DOCS_USERNAME` / `DOCS_PASSWORD` and sets the session cookie.
 3. Session is stored in an HTTP-only cookie signed with `DOCS_SESSION_SECRET`.
 
-## Summary of env vars
+## Summary of env vars {#summary-of-env-vars}
 
 | Variable               | Used for                          |
 |------------------------|-----------------------------------|
