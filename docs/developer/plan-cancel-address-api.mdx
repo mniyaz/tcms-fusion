@@ -1,0 +1,121 @@
+---
+sidebar_position: 4
+title: Plan Cancel Address API
+---
+
+<AuthGate>
+
+# Cancel Address API
+
+Remove a pickup or delivery address from a booking. The primary pickup (`Pickup 1`) and primary delivery (`Delivery 1`) cannot be canceled.
+
+## Endpoint
+
+```
+POST {BASE_URL}/rest/planner/cancelAddress/{userId}/{authKey}
+```
+
+| Item | Value |
+|------|--------|
+| **Method** | POST |
+| **Path** | `/rest/planner/cancelAddress/{userId}/{authKey}` |
+| **Content-Type** | application/json |
+
+## Path parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | string | User identifier (e.g. `user123`). |
+| `authKey` | string | Authentication key for the user. |
+
+## Request body
+
+JSON object with the address to cancel:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `type` | string | Yes | `"PickupAddress"` or `"DeliveryAddress"`. |
+| `id` | number | Yes | Address ID (e.g. `456`). |
+| `title` | string | Yes | Address title (e.g. `"Delivery 2"`, `"Pickup 2"`). |
+
+### Example (cancel delivery address)
+
+```json
+{
+  "type": "DeliveryAddress",
+  "id": 456,
+  "title": "Delivery 2"
+}
+```
+
+### Example (cancel pickup address)
+
+```json
+{
+  "type": "PickupAddress",
+  "id": 789,
+  "title": "Pickup 2"
+}
+```
+
+## cURL example
+
+```bash
+curl -X POST "{BASE_URL}/rest/planner/cancelAddress/user123/auth_key_xyz" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "DeliveryAddress",
+    "id": 456,
+    "title": "Delivery 2"
+  }'
+```
+
+Replace `{BASE_URL}`, `user123`, and `auth_key_xyz` with your base URL, user ID, and auth key.
+
+## Responses
+
+### 200 OK
+
+Address was canceled successfully.
+
+**Body:**
+
+```json
+{"success": true}
+```
+
+### 400 Bad Request
+
+Invalid or disallowed request.
+
+**Body (examples):**
+
+- `{"error": "Invalid Address Data!"}` – Request body could not be parsed or converted to a valid address.
+- `{"error": "Cannot Cancel Primary Pickup Address!"}` – The address title is `"Pickup 1"` (primary pickup cannot be removed).
+- `{"error": "Cannot Cancel Primary Delivery Address!"}` – The address title is `"Delivery 1"` (primary delivery cannot be removed).
+- `{"error": "Unsupported Address Type!"}` – `type` is not a supported address type.
+
+### 401 Unauthorized
+
+Invalid or missing `userId` / `authKey` for the tenant.
+
+**Body:** Empty.
+
+### 500 Internal Server Error
+
+Server error while processing the request.
+
+**Body:**
+
+```json
+{"error": "<error message>"}
+```
+
+## Rules
+
+- **Primary pickup** (`title` = `"Pickup 1"`) cannot be canceled; the API returns 400.
+- **Primary delivery** (`title` = `"Delivery 1"`) cannot be canceled; the API returns 400.
+- Only non-primary pickup and delivery addresses can be removed.
+- Authentication is validated per tenant; invalid `userId`/`authKey` returns 401.
+
+</AuthGate>

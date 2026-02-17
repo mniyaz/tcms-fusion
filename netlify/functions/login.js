@@ -50,10 +50,16 @@ exports.handler = async (event) => {
 
   const username = String(user).trim();
   let valid = false;
-
-  // Prefer env fallback when username matches DOCS_USERNAME (ensures production login works if env is set)
   const envUser = (process.env.DOCS_USERNAME || '').trim();
-  if (envUser && username === envUser) {
+  const envPassSet = !!(process.env.DOCS_PASSWORD || '').trim();
+  const isProduction = process.env.CONTEXT === 'production';
+
+  // In production: try env first when both DOCS_USERNAME and DOCS_PASSWORD are set (avoids 401 when Hygraph fails or vars not in scope)
+  if (isProduction && envUser && envPassSet) {
+    valid = checkEnvAuth(user, pass);
+    if (valid) console.log('Login: succeeded via env fallback (production)');
+  }
+  if (!valid && envUser && username === envUser) {
     valid = checkEnvAuth(user, pass);
   }
   if (!valid) {
@@ -63,6 +69,7 @@ exports.handler = async (event) => {
         const docUser = await getDocsUserByUsername(username);
         if (docUser && docUser.passwordHash && docUser.passwordSalt) {
           valid = verifyPassword(pass, docUser.passwordSalt, docUser.passwordHash);
+          if (valid) console.log('Login: succeeded via Hygraph');
         }
       } catch (e) {
         console.error('Hygraph login error:', e.message);
@@ -73,6 +80,9 @@ exports.handler = async (event) => {
     valid = checkEnvAuth(user, pass);
   }
   if (!valid) {
+    if (isProduction && (!envUser || !envPassSet)) {
+      console.warn('Login: 401 in production. Set DOCS_USERNAME and DOCS_PASSWORD in Netlify with scope including Functions, then redeploy.');
+    }
     return {
       statusCode: 401,
       headers: { 'Content-Type': 'application/json' },
@@ -81,7 +91,7 @@ exports.handler = async (event) => {
   }
 
   const value = createSignedCookie(secret);
-  const isProd = process.env.CONTEXT === 'production';
+  const isProd = isProduction;
   const cookie = [
     `${COOKIE_NAME}=${value}`,
     `Max-Age=${COOKIE_MAX_AGE}`,
