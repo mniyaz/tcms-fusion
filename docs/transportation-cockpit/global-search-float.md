@@ -6,7 +6,7 @@ This page explains how to use the floating global search icon and spotlight-styl
 
 Floating icon:
 
-![Global search floating icon](./images/global-search-icon.png)
+![Global search floating icon](/img/global_search_icon.png)
 
 Spotlight modal:
 
@@ -14,7 +14,7 @@ Spotlight modal:
 
 Results and actions list:
 
-![Global search results](./images/global-search-results-actions.png)
+![Global search results](/img/results_action.png)
 
 > Note: This capture was taken in a local dev session; API connectivity in that run returned `Failed to fetch`, but the UI states and interaction flow are shown.
 

@@ -6,15 +6,15 @@ This page explains how users can customize visible columns and column order in M
 
 Master Dashboard with action bar:
 
-![Master Dashboard main view](./images/master-dashboard-main.png)
+![Master Dashboard main view](/img/master_action_bar.png)
 
 Columns picker:
 
-![Master Dashboard columns picker](./images/master-dashboard-columns-picker.png)
+![Master Dashboard columns picker](/img/mdashboard_column_picker.png)
 
 Invoice and User ID enabled:
 
-![Master Dashboard with Invoice and User ID columns](./images/master-dashboard-columns-invoice-userid-enabled.png)
+![Master Dashboard with Invoice and User ID columns](/img/mdashboard_userid_invoice_enabled.png)
 
 > Note: The screenshots were captured in local development mode. The red fetch banner is environment/API connectivity related and not part of the column preference feature itself.
 
