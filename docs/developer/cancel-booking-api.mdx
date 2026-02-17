@@ -1,0 +1,122 @@
+---
+sidebar_position: 5
+title: Cancel Booking API
+---
+
+<AuthGate>
+
+# Cancel Booking API
+
+Cancel an existing booking. The booking status is set to cancelled, and optionally a cancellation charge can be recorded. If the cancellation has a non-zero amount, an invoicing record is created for pickup.
+
+## Endpoint {#endpoint}
+
+```
+POST {BASE_URL}/rest/cancel/cancelBooking/{userId}/{authKey}
+```
+
+| Item | Value |
+|------|--------|
+| **Method** | POST |
+| **Path** | `/rest/cancel/cancelBooking/{userId}/{authKey}` |
+| **Content-Type** | application/json |
+
+## Path parameters {#path-parameters}
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | string | User identifier (e.g. `user123`). |
+| `authKey` | string | Authentication key for the user. |
+
+## Request body {#request-body}
+
+JSON object (`CancelBean`):
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `bookingId` | string | Yes | The booking ID to cancel. |
+| `cancelValueList` | object | No | Cancellation details; if present, can include a chargeable amount. |
+
+`cancelValueList` (Cancel object):
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `amount` | string | Cancellation charge amount. Use `"0"` or omit for no charge; non-zero values create an invoicing record. |
+
+### Example (cancel with no charge) {#example-cancel-no-charge}
+
+```json
+{
+  "bookingId": "BK001",
+  "cancelValueList": {
+    "amount": "0"
+  }
+}
+```
+
+### Example (cancel with charge) {#example-cancel-with-charge}
+
+```json
+{
+  "bookingId": "BK002",
+  "cancelValueList": {
+    "amount": "50.00"
+  }
+}
+```
+
+## cURL example {#curl-example}
+
+```bash
+curl -X POST "{BASE_URL}/rest/cancel/cancelBooking/user123/auth_key_xyz" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "bookingId": "BK001",
+    "cancelValueList": { "amount": "0" }
+  }'
+```
+
+Replace `{BASE_URL}`, `user123`, and `auth_key_xyz` with your base URL, user ID, and auth key.
+
+## Responses {#responses}
+
+### 200 OK {#200-ok}
+
+Booking was cancelled successfully.
+
+**Body:**
+
+```json
+{"success": true}
+```
+
+### 401 Unauthorized {#401-unauthorized}
+
+Invalid or missing `userId` / `authKey` for the tenant.
+
+**Body:** Empty.
+
+### 500 Internal Server Error {#500-internal-server-error}
+
+Server error or cancel operation failed (e.g. booking not found, DB error).
+
+**Body:**
+
+```json
+{"success": false}
+```
+
+or
+
+```json
+{"error": "<error message>"}
+```
+
+## Rules {#rules}
+
+- Authentication is validated per tenant; invalid `userId`/`authKey` returns 401.
+- The booking is set to cancelled status and `orderClosedTime` is updated.
+- If `cancelValueList.amount` is present and non-zero, an invoicing record is created for the cancellation charge.
+- On success, the planner is updated (booking removed from plans), truck and driver assignments are updated to cancelled, and activity/socket notifications are sent.
+
+</AuthGate>
