@@ -35,3 +35,7 @@ yarn-error.log*
 /.vs/Fusion_Project/FileContentIndex/c222189f-8588-4456-b738-306dd9a49fec.vsidx
 *.vsidx
 .env.example
+
+# Local Netlify folder
+.netlify
+deno.lock
