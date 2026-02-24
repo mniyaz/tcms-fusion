@@ -42,6 +42,7 @@ JSON object (`CancelBean`):
 | Field | Type | Description |
 |-------|------|-------------|
 | `amount` | string | Cancellation charge amount. Use `"0"` or omit for no charge; non-zero values create an invoicing record. |
+| `remarks` | string | Optional remarks or reason for the cancellation. |
 
 ### Example (cancel with no charge) {#example-cancel-no-charge}
 
@@ -49,7 +50,8 @@ JSON object (`CancelBean`):
 {
   "bookingId": "BK001",
   "cancelValueList": {
-    "amount": "0"
+    "amount": "0",
+    "remarks": "Customer requested cancellation"
   }
 }
 ```
@@ -60,7 +62,8 @@ JSON object (`CancelBean`):
 {
   "bookingId": "BK002",
   "cancelValueList": {
-    "amount": "50.00"
+    "amount": "50.00",
+    "remarks": "Late cancellation fee"
   }
 }
 ```
@@ -72,7 +75,7 @@ curl -X POST "{BASE_URL}/rest/cancel/cancelBooking/user123/auth_key_xyz" \
   -H "Content-Type: application/json" \
   -d '{
     "bookingId": "BK001",
-    "cancelValueList": { "amount": "0" }
+    "cancelValueList": { "amount": "0", "remarks": "Optional cancellation remarks" }
   }'
 ```
 

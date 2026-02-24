@@ -1,0 +1,52 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@media (min-width: 997px) {
+  .menu {
+    flex-grow: 1;
+    padding: 0.5rem;
+  }
+  @supports (scrollbar-gutter: stable) {
+    .menu {
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      scrollbar-gutter: stable;
+    }
+  }
+
+  .menuWithAnnouncementBar {
+    margin-bottom: var(--docusaurus-announcement-bar-height);
+  }
+}
+
+.sidebarSearchWrap {
+  padding: 0 0.5rem 0.5rem;
+  position: sticky;
+  top: 0;
+  background: var(--ifm-background-surface-color);
+  z-index: 1;
+}
+
+.sidebarSearch {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.sidebarSearch::placeholder {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.sidebarSearch:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-alpha-20);
+}
