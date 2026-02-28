@@ -25,6 +25,7 @@ When you open the link, the page shows:
    - **Delivery** – Address and date/time  
    - **Truck required** – Type, tonnage, and quantity  
    - **Goods** – Description of what is to be carried  
+   - **Fixed price (if set)** – When the planner set a fixed price, you will see it in the job details. You cannot change it; you only accept and provide truck and driver.
 
 2. **Your identity (if the link was sent specifically to you)**  
    - At the top you may see **“Submitting as: [Your company name]”**.  
@@ -32,7 +33,7 @@ When you open the link, the page shows:
 
 3. **Submit your quote**  
    - A form where you enter:  
-     - **Quoted amount (RM)** – Your price in Malaysian Ringgit  
+     - **Quoted amount (RM)** – Your price in Malaysian Ringgit *(or* **fixed price** *if set—amount is shown and locked; you only provide truck and driver)*  
      - **Truck number** – The truck you will use  
      - **Tonnage** – Select from the list (e.g. 3 Ton, 5 Ton)  
      - **Driver name** – Name of the driver  
@@ -42,7 +43,7 @@ When you open the link, the page shows:
 
 ## How to fill the form
 
-- **Quoted amount (RM)** – Enter your price. This is required.  
+- **Quoted amount (RM)** – Enter your price. This is required *(unless the planner set a fixed price—then the amount is shown and locked; you only need to fill truck and driver and click **Accept & Submit**)*.  
 - **Truck number** – Enter the truck registration/number.  
   - If your link shows “Submitting as: [Your name],” you may see **suggestions** as you type (from your registered trucks). You can **choose one** or **type any** truck number.  
 - **Tonnage** – Choose the correct tonnage from the **dropdown** (e.g. 5 Ton).  
@@ -50,7 +51,7 @@ When you open the link, the page shows:
   - If you have suggestions, you can **select a driver** from the list; their **phone number** may be filled in automatically. You can also **type** the name and phone yourself.  
 - **Driver phone** – Enter the driver’s contact number (optional but useful).
 
-When everything is correct, click **Submit quote**.
+When everything is correct, click **Submit quote** (or **Accept & Submit** if the RFQ has a fixed price).
 
 ---
 
@@ -64,6 +65,7 @@ When everything is correct, click **Submit quote**.
 
 ## Tips
 
+- **Fixed price RFQs:** If you see a fixed amount (e.g. "Fixed price: RM 1,500 — Accept and provide truck & driver details"), you cannot change the price. Just fill in truck and driver and click **Accept & Submit**.  
 - Use the **exact link** you received. If the planner sent it via “Send to selected vendors,” your link includes your company details so the form shows your name and can suggest your trucks and drivers.  
 - If you don’t see suggestions, you can still type **truck number**, **driver name**, and **driver phone** manually—the form works either way.  
 - Make sure the **quoted amount**, **truck number**, and **driver name** are filled in; the rest helps the planner contact the driver and match the job.

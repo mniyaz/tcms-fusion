@@ -15,7 +15,8 @@ This page explains how to use the **RFQ Dashboard** as a planner: create an RFQ,
 1. In the **Create RFQ** section, use the **booking list** to select the booking you want to get quotes for.  
    - Only bookings that are **Booked** or **Redelivery** and that **do not already have an RFQ** appear in the list.
 2. Choose the **expiry date**—the last date and time when vendors can submit a quote.
-3. Click **Create RFQ**.  
+3. *(Optional)* Enter a **Fixed price (RM)** if you want vendors to accept a preset amount instead of quoting. When set, vendors cannot enter a price; they only accept and provide truck and driver details.
+4. Click **Create RFQ**.  
    - The system creates the RFQ and shows it under **Active RFQs**.  
    - You can only have **one RFQ per booking**; if a booking already has an RFQ, it won’t appear in the create list.
 
@@ -28,6 +29,8 @@ In **Active RFQs** you see each RFQ with:
 - RFQ ID and booking reference  
 - Customer name  
 - Status: **Open**, **Closed**, **Cancelled**, or **Expired**  
+- **Fixed: RM X,XXX** badge — Shown when you set a fixed price; vendors can only accept that amount.  
+- **Awaiting quotes** badge — Shown on open RFQs that have no quotes yet.  
 - Expiry date  
 - Truck requirement and route (e.g. pickup city → delivery city)  
 - Number of quotes received  
@@ -61,9 +64,10 @@ You can send the vendor link in three ways:
 - A list of **vendors** (from your system) appears. Select the vendors you want to invite.  
 - Click **“Send to N vendors via WhatsApp”**.  
 - WhatsApp opens **for each selected vendor** with:  
-  - A **personalized message** (job summary, pickup/delivery, truck requirement), and  
+  - A **personalized message** (job summary, pickup/delivery, truck requirement; **fixed price** if you set one), and  
   - A **link that includes that vendor’s details**.  
 - When that vendor opens **their** link, they will see **“Submitting as: [Vendor name]”** and can use **truck and driver suggestions** from their own fleet (or type manually).  
+- If you set a **fixed price**, the WhatsApp message states the amount and that vendors can only accept it (no quote needed).  
 - This is the best option when you want each vendor to get their own link and see their name on the form.
 
 ---
@@ -102,5 +106,6 @@ You can send the vendor link in three ways:
 
 ## Next steps
 
+- **[Fixed price (prefix price) RFQs](/docs/vendor-rfq/fixed-price-rfq)** – Create RFQs with a preset amount; vendors accept instead of quoting.  
 - **[Submitting a quote (for vendors)](/docs/vendor-rfq/vendor-submit-quote)** – What vendors see and how they submit.  
 - **[Completing the assignment](/docs/vendor-rfq/quick-assign-integration)** – What is pre-filled in Quick Assign and how to confirm and assign.

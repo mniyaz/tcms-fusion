@@ -16,19 +16,21 @@ When you have a booking that you want to assign to an **external vendor** (inste
 
 The Vendor RFQ module supports this flow inside TCMS Booking: you create one **Request for Quote (RFQ)** per booking, send a **link** to vendors, they **submit their quote** through that link (no login), and you **accept** the quote you want and go straight to **Quick Assign** to complete the assignment.
 
+**Fixed price option:** You can also create an RFQ with a **fixed price (prefix price)**. In that case, the vendor **cannot enter a price**—they can only **accept** the fixed amount and provide truck and driver details. This is useful when you've already agreed on a rate and just need vendors to confirm they can do the job.
+
 ## Who does what?
 
 | Who | What they do |
 |-----|------------------|
-| **Planner / operations** | Create an RFQ from a booking, set an expiry date, send the RFQ link to vendors (e.g. via WhatsApp), view all quotes, accept one quote, then complete the assignment in Quick Assign with details already filled in. |
-| **Vendor** | Receive the link (e.g. by WhatsApp), open it in the browser, read the job details (pickup, delivery, truck needed), enter their quote (price, truck, driver, phone), and submit. No account or login needed. |
+| **Planner / operations** | Create an RFQ from a booking, set an expiry date, (optionally) set a fixed price, send the RFQ link to vendors (e.g. via WhatsApp), view all quotes, accept one quote, then complete the assignment in Quick Assign with details already filled in. |
+| **Vendor** | Receive the link (e.g. by WhatsApp), open it in the browser, read the job details (pickup, delivery, truck needed). If **no fixed price**: enter quote (price, truck, driver, phone) and submit. If **fixed price**: accept the amount and provide truck and driver only. No account or login needed. |
 
 ## How it works (step by step)
 
 1. **You (planner)** open **RFQ Dashboard** (from the sidebar: **Operations** → **RFQ Dashboard**).
-2. You **select a booking** and **set an expiry date** for the RFQ, then click **Create RFQ**. The system creates the RFQ and a unique link for vendors.
+2. You **select a booking** and **set an expiry date** for the RFQ. Optionally, enter a **fixed price (RM)** if you want vendors to accept a preset amount rather than quote their own. Then click **Create RFQ**. The system creates the RFQ and a unique link for vendors.
 3. You **send that link** to vendors—by copying it, sharing via WhatsApp, or using **“Send to selected vendors”** to pick vendors and send each one a personalized WhatsApp message with the link.
-4. **Vendors** open the link, see the job details (pickup, delivery, truck requirement), fill in their **quoted amount**, **truck**, **tonnage**, **driver name**, and **driver phone**, then submit.
+4. **Vendors** open the link, see the job details (pickup, delivery, truck requirement). If **no fixed price**: they fill in **quoted amount**, **truck**, **tonnage**, **driver name**, and **driver phone**, then submit. If **fixed price**: the price is shown and locked; they only fill in truck and driver and click **Accept & Submit**.
 5. You see all **quotes** on the RFQ Dashboard (vendor name, amount, truck, driver). You **accept** the quote you want.
 6. When asked **“Assign this booking to this vendor?”**, you choose **Yes**. You are taken to **Quick Assign** (Planning page) with the **vendor**, **truck**, **driver**, **tonnage**, and **agreed price** already filled in.
 7. You **confirm and assign** in Quick Assign. The job is then assigned to that vendor with the agreed details.
@@ -36,7 +38,7 @@ The Vendor RFQ module supports this flow inside TCMS Booking: you create one **R
 ## Key terms (in plain language)
 
 - **RFQ (Request for Quote)** – One “request” per booking. It has an expiry date; after that, vendors can’t submit new quotes.
-- **Quote** – One submission from one vendor for that RFQ (their price, truck, driver, etc.).
+- **Quote** – One submission from one vendor for that RFQ (their price—or the fixed price—truck, driver, etc.).
 - **Accept quote** – You choose which vendor won the RFQ. After that, the RFQ is closed and you can go to Quick Assign with that vendor’s details pre-filled.
 - **Vendor link** – The web link you send to vendors. When they open it, they see the job and a form to submit their quote. If you used “Send to selected vendors,” the link also identifies the vendor so they see “Submitting as: [Vendor name]” and can pick from their own truck/driver list.
 
@@ -49,5 +51,6 @@ The Vendor RFQ module supports this flow inside TCMS Booking: you create one **R
 ## Next steps
 
 - **[Using the RFQ Dashboard](/docs/vendor-rfq/dashboard)** – Detailed steps to create RFQs, send to vendors, and accept a quote.
+- **[Fixed price (prefix price) RFQs](/docs/vendor-rfq/fixed-price-rfq)** – Create RFQs with a preset amount; vendors accept instead of quoting.
 - **[Submitting a quote (for vendors)](/docs/vendor-rfq/vendor-submit-quote)** – What vendors see and how to fill and submit the form.
 - **[Completing the assignment](/docs/vendor-rfq/quick-assign-integration)** – What is pre-filled in Quick Assign and how to confirm and assign.
