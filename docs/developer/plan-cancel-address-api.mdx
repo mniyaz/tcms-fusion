@@ -37,6 +37,41 @@ JSON object with the address to cancel:
 | `type` | string | Yes | `"PickupAddress"` or `"DeliveryAddress"`. |
 | `id` | number | Yes | Address ID (e.g. `456`). |
 | `title` | string | Yes | Address title (e.g. `"Delivery 2"`, `"Pickup 2"`). |
+| `goodsDescription` | array | Yes | Array of goods description objects for this address. Send existing data if available; otherwise send `[]`. This key is mandatory. |
+
+`goodsDescription` array items (GoodsDescription object):
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `itemCode` | string | Item code. |
+| `dimensionLength` | number | Length dimension. |
+| `dimensionWidth` | number | Width dimension. |
+| `dimensionHeight` | number | Height dimension. |
+| `dangerous` | boolean | Whether the goods are dangerous. |
+| `delivered` | boolean | Whether goods were delivered. |
+| `pickupId` | string | Pickup reference (e.g. `"O1"`). |
+| `type` | string | `"GoodsDescription"`. |
+| `packageType` | string | Package type (e.g. `"Pallet"`). |
+| `deliveryRefId` | number | Delivery reference ID. |
+| `pieces` | number | Number of pieces. |
+| `deliveryId` | string | Delivery reference (e.g. `"D1"`). |
+| `codReceived` | boolean | COD received flag. |
+| `picked` | boolean | Whether goods were picked. |
+| `cube` | number | Cube/volume. |
+| `goodsDescription` | string | Description text (e.g. `"GENERAL GOODS"`). |
+| `shipRefNo` | string | Shipment reference number. |
+| `stackable` | boolean | Whether goods are stackable. |
+| `gdId` | number | Goods description ID. |
+| `weight` | number | Weight value. |
+| `customerName` | string | Customer name. |
+| `disposable` | boolean | Disposable flag. |
+| `bookingId` | string | Booking ID. |
+| `cubeType` | string | Cube unit (e.g. `"M3"`). |
+| `coNumber` | string | CO number. |
+| `weightType` | string | Weight unit (e.g. `"KG"`). |
+| `createdDate` | string | Creation date. |
+| `cod` | string | COD amount or value. |
+| `pickupRefId` | number | Pickup reference ID. |
 
 ### Example (cancel delivery address) {#example-cancel-delivery-address}
 
@@ -44,7 +79,8 @@ JSON object with the address to cancel:
 {
   "type": "DeliveryAddress",
   "id": 456,
-  "title": "Delivery 2"
+  "title": "Delivery 2",
+  "goodsDescription": []
 }
 ```
 
@@ -54,7 +90,53 @@ JSON object with the address to cancel:
 {
   "type": "PickupAddress",
   "id": 789,
-  "title": "Pickup 2"
+  "title": "Pickup 2",
+  "goodsDescription": []
+}
+```
+
+### Example (with goods description data) {#example-with-goods-description}
+
+When the address has existing goods, include the full objects in the array:
+
+```json
+{
+  "type": "DeliveryAddress",
+  "id": 5406,
+  "title": "Delivery 2",
+  "goodsDescription": [
+    {
+      "itemCode": "",
+      "dimensionLength": 0,
+      "dimensionWidth": 0,
+      "dimensionHeight": 0,
+      "dangerous": false,
+      "delivered": false,
+      "pickupId": "O1",
+      "type": "GoodsDescription",
+      "packageType": "Pallet",
+      "deliveryRefId": 5406,
+      "pieces": 1,
+      "deliveryId": "D1",
+      "codReceived": false,
+      "picked": false,
+      "cube": 0,
+      "goodsDescription": "GENERAL GOODS",
+      "shipRefNo": "",
+      "stackable": true,
+      "gdId": 4258,
+      "weight": 0,
+      "customerName": "",
+      "disposable": false,
+      "bookingId": "2026020045",
+      "cubeType": "M3",
+      "coNumber": "34293",
+      "weightType": "KG",
+      "createdDate": "Feb 25, 2026, 12:29:39 AM",
+      "cod": "",
+      "pickupRefId": 5043
+    }
+  ]
 }
 ```
 
@@ -66,7 +148,8 @@ curl -X POST "{BASE_URL}/rest/planner/cancelAddress/user123/auth_key_xyz" \
   -d '{
     "type": "DeliveryAddress",
     "id": 456,
-    "title": "Delivery 2"
+    "title": "Delivery 2",
+    "goodsDescription": []
   }'
 ```
 
@@ -90,7 +173,7 @@ Invalid or disallowed request.
 
 **Body (examples):**
 
-- `{"error": "Invalid Address Data!"}` – Request body could not be parsed or converted to a valid address.
+- `{"error": "Invalid Address Data!"}` – Request body could not be parsed or converted to a valid address, or required field `goodsDescription` is missing.
 - `{"error": "Cannot Cancel Primary Pickup Address!"}` – The address title is `"Pickup 1"` (primary pickup cannot be removed).
 - `{"error": "Cannot Cancel Primary Delivery Address!"}` – The address title is `"Delivery 1"` (primary delivery cannot be removed).
 - `{"error": "Unsupported Address Type!"}` – `type` is not a supported address type.
@@ -113,6 +196,7 @@ Server error while processing the request.
 
 ## Rules {#rules}
 
+- **`goodsDescription`** is mandatory. For pickup and delivery addresses, send the existing array of goods descriptions if available; otherwise send `[]`.
 - **Primary pickup** (`title` = `"Pickup 1"`) cannot be canceled; the API returns 400.
 - **Primary delivery** (`title` = `"Delivery 1"`) cannot be canceled; the API returns 400.
 - Only non-primary pickup and delivery addresses can be removed.

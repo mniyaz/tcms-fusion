@@ -24,7 +24,7 @@ Use the coloured buttons to show only bookings in a certain stage:
 | **All** | Everything |
 | **Booked** | Bookings waiting to be assigned |
 | **Assigned** | Bookings with truck and driver assigned |
-| **YTD** | Yet to dispatch |
+| **YTD** | Yet to deliver |
 | **Picked** | Pickup done |
 | **Delivered** | Delivery done |
 
