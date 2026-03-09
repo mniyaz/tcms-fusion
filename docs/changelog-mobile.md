@@ -7,6 +7,79 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.136] - 2026-03-05
+
+### Improvements
+- Updated trip detail page.
+- Updated proof upload navigation.
+
+
+## [2.6.135] - 2026-03-04
+
+### Improvements
+-  Trip dashboard issue fixed.
+
+
+## [2.6.134] - 2026-03-04
+
+### Improvements
+-  Trip dashboard ui issue fixed.
+
+
+## [2.6.133] - 2026-03-04
+
+### Improvements
+-  Trip dashboard ui issue fixed.
+
+
+## [2.6.132] - 2026-03-04
+
+### Improvements
+-  Trip dashboard ui updated.
+
+
+## [2.6.131] - 2026-03-04
+
+### Improvements
+-  Search issue in Trip dashboard fixed.
+
+
+## [2.6.130] - 2026-03-03
+
+### Improvements
+-  Trip dashboard ui updated.
+
+
+## [2.6.129] - 2026-03-03
+
+### Bug Fixed
+- Pagination issue fixed in Trip dashboard.
+
+
+## [2.6.128] - 2026-03-02
+
+### New
+- Trip dashboard ui updated and trip detail page removed.
+
+
+## [2.6.127] - 2026-02-19
+
+### Bug Fixed
+- Driver proof upload issues fixed.
+
+
+## [2.6.126] - 2026-02-18
+
+### New
+- Goods Description feature added.
+
+
+## [2.6.125] - 2026-02-17
+
+### Bug Fixed
+- Proof not uploading for Vendor issues fixed.
+
+
 ## [2.6.124] - 2026-02-16
 
 ### Improvements
