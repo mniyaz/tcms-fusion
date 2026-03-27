@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 ## Claims – Help Guide
 
 ### 🎯 Purpose of Claims
