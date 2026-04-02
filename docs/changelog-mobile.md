@@ -7,6 +7,141 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.156] - 2026-04-01
+
+### New
+- Bulk upload option added in vendor proof upload.
+
+### Improvements
+- Now Default value has been set to status in Vendor Proof Upload.
+
+
+## [2.6.155] - 2026-04-01
+
+### Bug Fixed
+- Document not uploading in Vendor Proof Upload Issue Fixed.
+
+
+## [2.6.154] - 2026-03-31
+
+### Bug Fixed
+- Document not uploading in Vendor Proof Upload Issue Fixed
+
+
+## [2.6.153] - 2026-03-27
+
+### New
+- Added automatic navigation after vendor proof upload
+
+### Bug Fixed
+- Duplicate vendor proof upload issue fixed
+
+### Improvements
+- After document uploaded in vendor proof upload, now it will navigate to proof upload page.
+
+
+## [2.6.152] - 2026-03-26
+
+### New
+- Search option added in saved address.
+
+
+## [2.6.151] - 2026-03-25
+
+### Bug Fixed
+- Edit status option issue in co search fixed.
+
+
+## [2.6.151] - 2026-03-24
+
+### New
+- Edit status option in co search updated.
+
+
+## [2.6.150] - 2026-03-23
+
+### Bug Fixed
+- External Media permission issue fixed for android.
+
+
+## [2.6.149] - 2026-03-23
+
+### New
+- External Media permission issue fixed for android.
+
+
+## [2.6.148] - 2026-03-23
+
+### Bug Fixed
+- External Media permission added for android version below 32 sdk.
+
+
+## [2.6.147] - 2026-03-23
+
+### Bug Fixed
+- External Media permission added for android.
+
+
+## [2.6.146] - 2026-03-23
+
+### New
+- Invoice feature added for internal testing.
+
+
+## [2.6.145] - 2026-03-20
+
+### New
+- Invoice feature updated.
+
+
+## [2.6.144] - 2026-03-19
+
+### New
+- Excel download feature added in co search.
+
+
+## [2.6.143] - 2026-03-19
+
+### Bug Fixed
+- Notification issue fixed.
+
+
+## [2.6.142] - 2026-03-18
+
+### New
+- App version updated.
+
+
+## [2.6.141] - 2026-03-18
+
+### New
+- Accept feature added for Cash Advance.
+
+
+## [2.6.140] - 2026-03-16
+
+### Improvements
+- Disabled Co Search.
+
+
+## [2.6.139] - 2026-03-16
+
+### Improvements
+- Disabled Accept feature for Cash Advance.
+
+
+## [2.6.138] - 2026-03-16
+
+### Bug Fixed
+- Pod not Uploading issue fixed.
+
+
+## [2.6.137] - 2026-03-11
+
+### New
+- Updated multiple upload option in Add Petty Cash.
+
+
 ## [2.6.136] - 2026-03-05
 
 ### Improvements
