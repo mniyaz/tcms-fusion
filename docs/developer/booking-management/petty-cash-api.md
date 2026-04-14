@@ -226,6 +226,24 @@ APIs focused heavily on issuing, checking, and summarizing cash advances for bus
 }
 ```
 
+### Accept Cash Advance
+- **Endpoint**: `POST /acceptCashAdvance`
+- **Content-Type**: `application/json`
+- **Request Body Payload**:
+```json
+{
+  "userId": "string",
+  "voucherNumber": "string"
+}
+```
+- **Description**: Records the user who accepted the cash advance and the timestamp of acceptance. Updates the `ACCEPTED_BY` and `ACCEPTED_DATE` fields in the database for the specified voucher.
+- **Response**:
+```json
+{
+  "data": true
+}
+```
+
 ---
 
 ## Trip & Voucher Operations
