@@ -2,9 +2,17 @@
 sidebar_position: 1
 ---
 
-## Edit a Vendor Trip
-
 The Edit Vendor Trip feature is designed to allow users to **update and maintain accurate information** about vendor bookings. Its main purpose is to ensure that any changes in trip details are properly recorded and reflected in the system.
+
+import VideoModal from '@site/src/components/VideoModal.js';
+
+<VideoModal
+  linkText="Watch Video"
+  title="YouTube Video"
+  iframeSrc="https://www.youtube.com/embed/uCAVXOnLM5I?si=l7sCFo0zz5tbKUF2"
+/>
+
+---
 
 ### Step 1: Access the Vendor Trip
 
