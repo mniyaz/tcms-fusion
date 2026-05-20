@@ -7,6 +7,80 @@ sidebar_position: 4
 All notable changes to this project will be documented in this file.
 
 
+## [2.6.167] - 2026-05-19
+
+### Bug Fixed
+- Fixed UI rendering issue in Master Dashboard
+
+
+## [2.6.166] - 2026-05-18
+
+### Bug Fixed
+- Fixed UI issue in status and tracking link in the Master Dashboard
+
+
+## [2.6.165] - 2026-05-08
+
+### Improvements
+- Now Pod Id should display in trip details.
+
+
+## [2.6.164] - 2026-05-08
+
+### Bug Fixed
+- Goods Delivery confirm option added in trip details not showing for the users issue fixed.
+
+
+## [2.6.163] - 2026-05-08
+
+### Improvements
+- Disabled Client login.
+
+
+## [2.6.162] - 2026-05-08
+
+### New
+- Goods Delivery confirm option added in trip details.
+
+
+## [2.6.161] - 2026-05-06
+
+### Improvements
+- Enabled Client login.
+
+
+## [2.6.160] - 2026-05-02
+
+### Improvements
+- Removed automatic popup of driver checklist on trip details.
+
+
+## [2.6.159] - 2026-04-17
+
+### Bug Fixed
+- Created booking not showing in dashboard issue fixed.
+
+
+## [2.6.158] - 2026-04-15
+
+### Improvements 
+- Functionality for the acknowledgement, summary and courier is added in the invoice module. 
+- Generation of acknowledgement, summary and courier is done.
+- Improved UI for all the invoice tabs.
+
+### Bug fixed
+- In the pending tab, the pickup drop issue is fixed.
+
+
+## [2.6.157] - 2026-04-09
+
+### New
+- Do Search feature added.
+
+### Improvements
+- Co Search UI updated.
+
+
 ## [2.6.156] - 2026-04-01
 
 ### New
