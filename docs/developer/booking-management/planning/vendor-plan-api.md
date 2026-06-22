@@ -1,4 +1,4 @@
-# Planner APIs
+# Vendor Planner APIs
 
 These APIs provide endpoints for resolving vendor drivers and vendor trucks, along with vendor details. The endpoint parameters are passed via the path (for authentication) and via HTTP headers (for query variables) as requested.
 

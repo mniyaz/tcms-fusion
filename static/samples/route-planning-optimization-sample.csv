@@ -1,0 +1,9 @@
+orderNo,customerName,address,city,state,pincode,lat,lng,picName,picPhone,altPhone,geofenceRadiusMeters,serviceTimeMin,packageId,packageType,weightKg,volumeM3,lengthCm,widthCm,heightCm,hazmat,stackable,fragile,priority,timeWindowStart,timeWindowEnd,notes
+ORD-1001,Acme Trading Sdn Bhd,12 Jalan Ampang,Kuala Lumpur,Wilayah Persekutuan,50450,3.1578,101.7120,Ahmad Rizal,+60123456789,,50,15,PKG-001,PALLET,120,1.2,120,100,100,false,true,false,NORMAL,08:00,17:00,Ground floor bay
+ORD-1002,Beta Retail,88 Jalan Tun Razak,Kuala Lumpur,Wilayah Persekutuan,50400,3.1612,101.7145,Siti Aminah,+60198765432,,50,10,PKG-002,CARTON,45,0.4,60,40,35,false,true,false,NORMAL,09:00,12:00,
+ORD-1003,Gamma Hub,5 Persiaran KLCC,Kuala Lumpur,Wilayah Persekutuan,50088,3.1579,101.7116,Ops Desk,+60312345678,,75,20,PKG-003,PALLET,200,2.0,120,100,110,false,true,false,HIGH,07:30,11:00,Loading dock B
+ORD-1004,Delta Mart,21 Jalan Bukit Bintang,Kuala Lumpur,Wilayah Persekutuan,55100,3.1470,101.7105,Lee Wei,+60112233445,,50,12,PKG-004,CARTON,35,0.3,50,40,30,false,true,false,NORMAL,10:00,14:00,
+ORD-1005,Epsilon Pharmacy,10 Jalan Sultan Ismail,Kuala Lumpur,Wilayah Persekutuan,50250,3.1555,101.7058,Nurul,+60187654321,,50,8,PKG-005,CARTON,18,0.1,40,30,25,false,true,true,NORMAL,08:30,16:00,Fragile — handle with care
+ORD-1006,Zeta Warehouse,3 Jalan Klang Lama,Kuala Lumpur,Wilayah Persekutuan,58000,3.0985,101.6752,Ravi,+60195556677,,60,25,PKG-006,PALLET,350,3.5,120,100,120,false,true,false,NORMAL,09:00,15:00,Heavy pallet
+ORD-1007,Eta Cafe Supply,15 Jalan Pudu,Kuala Lumpur,Wilayah Persekutuan,55100,3.1402,101.7089,Mei Ling,+60134445566,,40,10,PKG-007,CARTON,22,0.2,45,35,30,false,true,false,NORMAL,11:00,13:00,
+ORD-1008,Theta Office,2 Jalan Stesen Sentral,Kuala Lumpur,Wilayah Persekutuan,50470,3.1345,101.6869,Kumar,+60176668899,,50,15,PKG-008,CARTON,55,0.5,70,50,40,false,true,false,NORMAL,08:00,18:00,KL Sentral tower
