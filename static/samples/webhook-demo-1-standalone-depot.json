@@ -1,0 +1,69 @@
+{
+  "planningDate": "2026-06-12",
+  "planningTimezone": "Asia/Kuala_Lumpur",
+  "customerId": "1001",
+  "customerName": "Acme Trading Sdn Bhd",
+  "depot": {
+    "name": "Shah Alam Main DC",
+    "address": "Lot 7 Jalan Industri 1, Seksyen 15",
+    "city": "Shah Alam",
+    "state": "Selangor",
+    "pincode": "40000",
+    "lat": 3.0738,
+    "lng": 101.5183
+  },
+  "orders": [
+    {
+      "externalOrderId": "SO-DEMO-1001",
+      "customerName": "Acme Trading Sdn Bhd",
+      "address": "12 Jalan Ampang",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "50450",
+      "lat": 3.1578,
+      "lng": 101.712,
+      "serviceTimeMinutes": 15,
+      "weightKg": 120,
+      "volumeM3": 1.2,
+      "picName": "Ahmad Rizal",
+      "picPhone": "+60123456789",
+      "timeWindowStart": "08:00",
+      "timeWindowEnd": "17:00",
+      "notes": "Demo 1 — standalone depot (not a delivery stop)"
+    },
+    {
+      "externalOrderId": "SO-DEMO-1002",
+      "customerName": "Beta Retail",
+      "address": "88 Jalan Tun Razak",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "50400",
+      "lat": 3.1612,
+      "lng": 101.7145,
+      "serviceTimeMinutes": 10,
+      "weightKg": 45,
+      "volumeM3": 0.4,
+      "picName": "Siti Aminah",
+      "picPhone": "+60198765432",
+      "timeWindowStart": "09:00",
+      "timeWindowEnd": "12:00"
+    },
+    {
+      "externalOrderId": "SO-DEMO-1003",
+      "customerName": "Gamma Hub",
+      "address": "5 Persiaran KLCC",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "50088",
+      "lat": 3.1579,
+      "lng": 101.7116,
+      "serviceTimeMinutes": 20,
+      "weightKg": 200,
+      "volumeM3": 2.0,
+      "picName": "Ops Desk",
+      "picPhone": "+60312345678",
+      "timeWindowStart": "07:30",
+      "timeWindowEnd": "11:00"
+    }
+  ]
+}

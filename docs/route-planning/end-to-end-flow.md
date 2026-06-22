@@ -324,6 +324,7 @@ If you completed optimize and assign but history still shows **Ingested**, ask I
 | Document | Audience |
 | :--- | :--- |
 | [Webhook order ingest (API)](../developer/route-planning/webhook-orders-ingest-api) | Developers integrating ERP/webhook |
+| [Postman webhook demo](/postman/Route-Planning-Webhook-Demo.postman_collection.json) | Import into Postman — 3 signed sample ingests |
 | [Session lifecycle & status sync](../developer/route-planning/session-lifecycle) | Developers — status transitions and assign paths |
 | [Error codes](../developer/route-planning/error-codes) | Developers — `RP_*` API errors |
 | [Route Planning developer intro](../developer/route-planning/intro) | API base path and technical overview |

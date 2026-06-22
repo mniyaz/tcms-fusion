@@ -138,8 +138,86 @@ Top-level JSON object:
 | `planningDate` | **Yes** | Service date for the run, format `YYYY-MM-DD` |
 | `planningTimezone` | No | IANA timezone id (for example `Asia/Kuala_Lumpur`) |
 | `sessionId` | No | Existing planning session UUID. When set, **new orders are appended** to that session. When omitted, a **new session** is created and stops **replace** any prior stops on that new session |
-| `depot` | No | Optional depot object (stored as JSON on the session). Same shape as route setup depot: `name`, `address`, `city`, `state`, `pincode`, `lat`, `lng` |
+| `customerId` | No | TCMS customer id applied when row-level customer is missing |
+| `customerName` | No | TCMS customer name (or `ID-Name` format) |
+| `depot` | No | Pickup / route start (see [Pickup at ingest](#pickup--route-start-at-ingest)) |
+| `pickupLocation` | No | Alias for `depot` — same object shape |
+| `pickup` | No | Alias for `depot` — same object shape |
 | `orders` | **Yes** | Non-empty array of order objects (see below) |
+
+### Pickup / route start at ingest
+
+Send pickup with the webhook so operators **do not** pick route start manually on Location review. The server stores:
+
+- `depot_json` on the session (used for TCMS **booking pickup address** — real address from ingest, not dummy defaults)
+- `route_setup_json` with `depot` + `returnToDepot: true` (wizard skips Route setup when coords are valid)
+
+| Depot field | Description |
+| :--- | :--- |
+| `name` | Label shown in wizard and on booking pickup |
+| `address` | Street line (maps to booking `addressLineOne`) |
+| `city`, `state`, `pincode` | Address components |
+| `lat`, `lng` | **Required** for route start / HERE (with valid address text for bookings) |
+| `sourceOrderId` | Optional — matches `externalOrderId` on one row in `orders[]`; server sets `sourceStopId` so **Set as start** is pre-selected on that stop in Location review |
+| `sourceStopId` | Optional — explicit planning stop id when already known |
+
+**Three integration patterns:**
+
+1. **Standalone depot** — `depot` object only (not duplicated in `orders`). Route start is set; no table row highlighted.
+2. **Pickup as an order row** — include the warehouse row in `orders[]` and set `depot.sourceOrderId` to the same `externalOrderId`. Location review shows **Set as start** on that row.
+3. **`pickupLocation` alias** — same as `depot`; useful when ERP exports `pickupLocation` instead of `depot`.
+
+**Excel / CSV upload (same behaviour):**
+
+- Multipart field `depotJson` — JSON string with the same depot object shape.
+- **Pickup row** in the file — set `orderNo` to `PICKUP` or `DEPOT`, or column `stopRole` = `pickup`. That row is **not** ingested as a delivery stop; it becomes session depot + route setup.
+
+### Generate signed headers in Settings (no manual HMAC)
+
+Operators can generate a **copy-paste developer kit** from TCMS Settings — endpoint URL, tenant id, webhook secret, signed headers, sample JSON, cURL, and Postman variables/script.
+
+| UI | Path |
+| :--- | :--- |
+| **Legacy Settings** | **Settings → Route Planning Webhook** tab → **Generate signed developer kit** |
+| **Light App** | **Settings → Route Planning Webhook** (`/lightapp/settings/route-planning-webhook`) |
+
+**API** (authenticated with `username` / `authKey`, not webhook HMAC):
+
+```
+GET  {context}/rest/route-planning/webhook/developer-kit?username=…&authKey=…
+POST {context}/rest/route-planning/webhook/developer-kit/sign?username=…&authKey=…
+     Body: { "body": "{ … raw JSON … }" }
+```
+
+The server signs using the same secret resolution as production webhooks. Share the generated blocks with your integration team or paste Postman variables into the demo collection below.
+
+### Postman demo collection
+
+Import this collection to try all three webhook patterns (HMAC signing is automatic):
+
+**File:** [`/postman/Route-Planning-Webhook-Demo.postman_collection.json`](/postman/Route-Planning-Webhook-Demo.postman_collection.json) (also in repo `static/postman/`)
+
+| Collection variable | Example |
+| :--- | :--- |
+| `baseUrl` | `https://your-host:8443` |
+| `contextPath` | `transportsupplyproject` |
+| `tenantId` | Your tenant schema id |
+| `webhookSecret` | Same value as `routeplanning.webhook.secret` on server |
+
+Sample JSON bodies (download from site root `/samples/` or repo `static/samples/`):
+
+| File | Pattern |
+| :--- | :--- |
+| `webhook-demo-1-standalone-depot.json` | Standalone `depot` + 3 deliveries |
+| `webhook-demo-2-pickup-order-row.json` | `depot.sourceOrderId` + `WH-START` row |
+| `webhook-demo-3-pickup-location-alias.json` | `pickupLocation` + 3 deliveries |
+
+**Demo steps after a 200 response:**
+
+1. Note `sessionId` in the response JSON.
+2. Open **Route planning → Session history → Open** (or Location review with that session).
+3. Confirm route start is already configured (Route setup step skipped when depot is valid).
+4. For Demo 2, confirm the pickup row shows **Set as start** selected.
 
 ### Order object fields
 
@@ -301,11 +379,12 @@ JSON error shape:
 
 1. **Session status** moves to **`INGESTED`** (source **`WEBHOOK`** on `route_planning_session`).
 2. **Usage metrics** increment webhook order counts for the tenant.
-3. **Operators** continue in the wizard (locations → fleet → optimize → **Assign to planner**). Session history should progress through **`OPTIMIZED`** and **`COMMITTED`** (shown as **Planned in TCMS**) when those steps complete — including browser HERE and legacy planner assign paths (see [Session lifecycle](./session-lifecycle)).
-4. **Open the session** in the UI:
+3. **Operators** continue in the wizard (locations → fleet → optimize → **Assign to planner**). Session history should progress through **`OPTIMIZED`** and **`COMMITTED`** when those steps complete.
+4. **Pickup at ingest:** when the payload includes `depot`, `pickupLocation`, or `pickup`, Location review opens with route start already set (and **Set as start** pre-selected when `sourceOrderId` matches an order row). Booking pickup uses the ingested address — not placeholder defaults.
+5. **Open the session** in the UI:
    - Navigate to `/route-planning/location-review` with `sessionId` in router state or session storage, or
    - **Usage metrics & history → Session history** → **Open**.
-5. **Integrators** can call authenticated session APIs (`username` + `authKey` query params):
+6. **Integrators** can call authenticated session APIs (`username` + `authKey` query params):
    - `GET /rest/route-planning/sessions/{sessionId}/stops`
    - `PUT /rest/route-planning/sessions/{sessionId}` — depot / fleet JSON, or valid **status** transitions
    - `POST /rest/route-planning/sessions/{sessionId}/optimize` — server-side HERE run

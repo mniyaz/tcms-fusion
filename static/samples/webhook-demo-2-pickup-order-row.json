@@ -1,0 +1,69 @@
+{
+  "planningDate": "2026-06-12",
+  "planningTimezone": "Asia/Kuala_Lumpur",
+  "customerId": "1001",
+  "customerName": "Acme Trading Sdn Bhd",
+  "depot": {
+    "name": "Central warehouse — Set as start",
+    "sourceOrderId": "WH-START",
+    "address": "Lot 12 Jalan Logistik 3",
+    "city": "Shah Alam",
+    "state": "Selangor",
+    "pincode": "40150",
+    "lat": 3.0472,
+    "lng": 101.5245
+  },
+  "orders": [
+    {
+      "externalOrderId": "WH-START",
+      "customerName": "Acme Trading Sdn Bhd",
+      "address": "Lot 12 Jalan Logistik 3",
+      "city": "Shah Alam",
+      "state": "Selangor",
+      "pincode": "40150",
+      "lat": 3.0472,
+      "lng": 101.5245,
+      "serviceTimeMinutes": 5,
+      "weightKg": 1,
+      "volumeM3": 0.01,
+      "picName": "Warehouse gate",
+      "picPhone": "+60311112222",
+      "notes": "Pickup / route start row — linked via depot.sourceOrderId"
+    },
+    {
+      "externalOrderId": "SO-DEMO-2001",
+      "customerName": "Delta Mart",
+      "address": "21 Jalan Bukit Bintang",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "55100",
+      "lat": 3.147,
+      "lng": 101.7105,
+      "serviceTimeMinutes": 12,
+      "weightKg": 35,
+      "volumeM3": 0.3,
+      "picName": "Lee Wei",
+      "picPhone": "+60112233445",
+      "timeWindowStart": "10:00",
+      "timeWindowEnd": "14:00"
+    },
+    {
+      "externalOrderId": "SO-DEMO-2002",
+      "customerName": "Epsilon Pharmacy",
+      "address": "10 Jalan Sultan Ismail",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "50250",
+      "lat": 3.1555,
+      "lng": 101.7058,
+      "serviceTimeMinutes": 8,
+      "weightKg": 18,
+      "volumeM3": 0.1,
+      "picName": "Nurul",
+      "picPhone": "+60187654321",
+      "timeWindowStart": "08:30",
+      "timeWindowEnd": "16:00",
+      "fragile": true
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "planningDate": "2026-06-12",
+  "planningTimezone": "Asia/Kuala_Lumpur",
+  "customerId": "1002",
+  "customerName": "Beta Retail Group",
+  "pickupLocation": {
+    "name": "Petaling Jaya Cross-dock",
+    "address": "18 Jalan SS7/26, Kelana Jaya",
+    "city": "Petaling Jaya",
+    "state": "Selangor",
+    "pincode": "47301",
+    "lat": 3.1073,
+    "lng": 101.5917
+  },
+  "orders": [
+    {
+      "externalOrderId": "SO-DEMO-3001",
+      "customerName": "Beta Retail Group",
+      "address": "2 Jalan Stesen Sentral",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "50470",
+      "lat": 3.1345,
+      "lng": 101.6869,
+      "serviceTimeMinutes": 15,
+      "weightKg": 55,
+      "volumeM3": 0.5,
+      "picName": "Kumar",
+      "picPhone": "+60176668899",
+      "timeWindowStart": "08:00",
+      "timeWindowEnd": "18:00"
+    },
+    {
+      "externalOrderId": "SO-DEMO-3002",
+      "customerName": "Zeta Warehouse",
+      "address": "3 Jalan Klang Lama",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "58000",
+      "lat": 3.0985,
+      "lng": 101.6752,
+      "serviceTimeMinutes": 25,
+      "weightKg": 350,
+      "volumeM3": 3.5,
+      "picName": "Ravi",
+      "picPhone": "+60195556677",
+      "timeWindowStart": "09:00",
+      "timeWindowEnd": "15:00"
+    },
+    {
+      "externalOrderId": "SO-DEMO-3003",
+      "customerName": "Eta Cafe Supply",
+      "address": "15 Jalan Pudu",
+      "city": "Kuala Lumpur",
+      "state": "Wilayah Persekutuan",
+      "pincode": "55100",
+      "lat": 3.1402,
+      "lng": 101.7089,
+      "serviceTimeMinutes": 10,
+      "weightKg": 22,
+      "volumeM3": 0.2,
+      "picName": "Mei Ling",
+      "picPhone": "+60134445566",
+      "timeWindowStart": "11:00",
+      "timeWindowEnd": "13:00"
+    }
+  ]
+}
