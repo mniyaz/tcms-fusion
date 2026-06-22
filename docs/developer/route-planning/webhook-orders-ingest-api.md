@@ -301,13 +301,15 @@ JSON error shape:
 
 1. **Session status** moves to **`INGESTED`** (source **`WEBHOOK`** on `route_planning_session`).
 2. **Usage metrics** increment webhook order counts for the tenant.
-3. **Operators** can continue in the UI:
+3. **Operators** continue in the wizard (locations → fleet → optimize → **Assign to planner**). Session history should progress through **`OPTIMIZED`** and **`COMMITTED`** (shown as **Planned in TCMS**) when those steps complete — including browser HERE and legacy planner assign paths (see [Session lifecycle](./session-lifecycle)).
+4. **Open the session** in the UI:
    - Navigate to `/route-planning/location-review` with `sessionId` in router state or session storage, or
-   - Open **Usage metrics & history → Session history** and click **Open** on the session.
-4. **Integrators** can call authenticated session APIs (same module, `username` + `authKey` query params):
+   - **Usage metrics & history → Session history** → **Open**.
+5. **Integrators** can call authenticated session APIs (`username` + `authKey` query params):
    - `GET /rest/route-planning/sessions/{sessionId}/stops`
-   - `PUT /rest/route-planning/sessions/{sessionId}` — depot / fleet JSON
+   - `PUT /rest/route-planning/sessions/{sessionId}` — depot / fleet JSON, or valid **status** transitions
    - `POST /rest/route-planning/sessions/{sessionId}/optimize` — server-side HERE run
+   - `POST /rest/route-planning/sessions/{sessionId}/commit-to-planner` — assign when status is **`OPTIMIZED`** and server routes exist
 
 ---
 

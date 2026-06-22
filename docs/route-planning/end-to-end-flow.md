@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Route Planning — end-to-end flow for beginners
 
-This guide explains **Route Planning V2** in plain language: how to take a list of delivery orders and turn them into optimized truck routes you can export, send to a partner system, or commit into TCMS Planner.
+This guide explains **Route Planning V2** in plain language: how to take a list of delivery orders and turn them into optimized truck routes you can export, send to a partner system, or **assign to TCMS Planner**.
 
 No API or coding knowledge required for the main wizard path.
 
@@ -20,10 +20,10 @@ No API or coding knowledge required for the main wizard path.
 2. Check **locations** on a map.
 3. Set your **depot** (where trucks start) and **trucks**.
 4. Let **HERE Maps** calculate the best routes.
-5. **Export**, **commit to Planner**, or **send to a third party**.
+5. **Export**, **assign to planner**, or **send to a third party**.
 6. Do a final **assignment review** before drivers go out.
 
-Each run is saved as a **planning session**. You can reopen past sessions from **Usage metrics & history → Session history**.
+Each run is saved as a **planning session**. **Session history** (under **Usage metrics & history**) shows where you are in the workflow — for example **Optimized** after routes are calculated and **Planned in TCMS** after you assign drivers and trucks.
 
 ---
 
@@ -48,7 +48,7 @@ flowchart TD
   C --> D[4. Fleet / trucks]
   D --> E[5. Route preview — optimize]
   E --> F[6. Assignment review]
-  E --> G[Export / Commit / Send to partner]
+  E --> G[Export / Assign / Send to partner]
 ```
 
 | Step | What you do | Why it matters |
@@ -58,7 +58,7 @@ flowchart TD
 | **3. Route setup** | Confirm depot, planning date, return-to-depot | Defines where routes **start and end** |
 | **4. Fleet** | Choose trucks, capacities, shifts | HERE needs vehicles to split stops into tours |
 | **5. Route preview** | Run optimization; view map and route list | This is the main “planning” screen |
-| **6. Assignment** | Final check of routes and stops | Hand-off before operations / drivers |
+| **6. Assignment** | Final check; assign to planner if not done yet | Hand-off before operations / drivers |
 
 The step bar at the top of each screen lets you jump back to an earlier step (for example to fix a wrong pin).
 
@@ -103,7 +103,7 @@ You usually **do not** call the webhook yourself. Ask IT to confirm orders were 
 5. Fix rejected rows in your file and re-upload if needed.
 6. Click **Continue to location review**.
 
-**You should see:** A **session id** (UUID) on later screens — that is your planning run reference.
+**You should see:** A **session id** (UUID) on later screens — that is your planning run reference. Session history should show status **Ingested** after a successful upload.
 
 ### Minimum columns in your upload file
 
@@ -174,11 +174,13 @@ This is where routes are **calculated** and shown on the map.
 
 ### What happens automatically
 
-When stops, depot, fleet, and HERE configuration are ready, the app **runs optimization** (server and/or browser HERE). Wait for:
+When stops, depot, fleet, and HERE configuration are ready, the app **runs optimization** (on the server and/or in the browser). Wait for:
 
 - Route lines on the **map**
 - **Optimized routes** list on the left
 - Summary cards: vehicles used, assigned stops, distance, duration
+
+When optimization finishes, **Session history** should show **Optimized** — whether the calculation ran on the server or in your browser (for example in a dev environment).
 
 ### What you can do on this screen
 
@@ -187,9 +189,13 @@ When stops, depot, fleet, and HERE configuration are ready, the app **runs optim
 | **Re-run / Retry optimization** | You changed stops, excluded a stop, or added trucks |
 | **Export route plan** | Download JSON of optimized routes |
 | **Export load plan** | Download load/sequence JSON |
-| **Plan with Driver & Truck** | Create trips in TCMS Planner (assign truck + driver per route) |
-| **Send to Third Party** | POST plan JSON to a partner HTTPS URL |
+| **Plan with Driver & Truck** → **Assign to planner** | Create trips in TCMS Planner (pick truck + driver per route) |
+| **Send to Third Party** | Send plan JSON to a partner HTTPS URL |
 | **Continue to assignment** | Move to final review when routes look good |
+
+:::info One button for planners
+The modal always shows **Assign to planner**. You do not need to know whether routes were saved via server or browser optimization — the app handles that for you.
+:::
 
 ### Unassigned stops
 
@@ -205,11 +211,11 @@ Expand **Route planning status** to see:
 
 | Badge | Meaning |
 | :--- | :--- |
-| **Server V2** | Server optimize / commit / dispatch APIs enabled |
+| **Server V2** | Server optimize / assign / dispatch APIs enabled |
 | **DB ok** | Database migrations applied |
 | **HERE ok** | HERE API key configured on server |
 
-If **Server off** but you still have a browser HERE key, optimization may still run in the browser for testing.
+If **Server off** but you still have a browser HERE key, optimization may still run in the browser for testing — session history should still advance to **Optimized** when routes succeed.
 
 ---
 
@@ -219,19 +225,26 @@ If **Server off** but you still have a browser HERE key, optimization may still 
 
 **Do this:**
 
-1. Review each route’s stop order and details.
-2. Confirm assignments match operational reality.
-3. Print or hand off to dispatch / drivers per your SOP.
+1. Review each route’s stop order, **delivery addresses**, and details.
+2. Optionally generate and inspect a planner payload preview.
+3. Click **Assign to planner** if you have not already done so on route preview.
+4. After a successful assign, the session becomes **view-only** — you can still review routes and exports, but **Assign to planner** is disabled.
+
+When you reopen a session that was already assigned, routes and stop addresses should still be visible.
 
 ---
 
 ## After planning — optional actions
 
-These happen from **Route preview** (step 5) when status is **Optimized**:
+These happen from **Route preview** (step 5) or **Assignment review** (step 6) when status is **Optimized**:
 
-### Commit to Planner (“Plan with Driver & Truck”)
+### Assign to planner (“Plan with Driver & Truck”)
 
-Creates planner trips in TCMS with truck and driver you select per route. Session status becomes **Committed**. You cannot commit twice for the same session.
+1. Open the modal — one row per optimized route.
+2. Enter **own truck** or **vendor truck**, driver name, IC number, and tonnage.
+3. Click **Assign to planner**.
+
+Session history moves to **Planned in TCMS** (`COMMITTED` in the database). You **cannot assign twice** for the same session — the button is disabled and a banner explains the session is view-only.
 
 ### Send to third party
 
@@ -239,7 +252,7 @@ Sends route and/or load plan JSON to a **HTTPS webhook URL** your partner provid
 
 ### Export only
 
-Download JSON files without committing — useful for archiving or manual import elsewhere.
+Download JSON files without assigning — useful for archiving or manual import elsewhere.
 
 ---
 
@@ -249,6 +262,15 @@ Download JSON files without committing — useful for archiving or manual import
 2. Open the **Session history** tab.
 3. Filter by date or status.
 4. Click **Open** to resume that session at the right wizard step.
+
+Statuses you should see after a full successful run:
+
+| Status in history | Meaning |
+| :--- | :--- |
+| **Ingested** | File uploaded or webhook received |
+| **Optimizing** | Calculation in progress (brief) |
+| **Optimized** | Routes calculated — ready to export or assign |
+| **Planned in TCMS** | Assigned to planner — view-only |
 
 For **failed** optimization or dispatch only, use the **Failed sessions** tab (with **Retry** where available).
 
@@ -261,9 +283,13 @@ For **failed** optimization or dispatch only, use the **Failed sessions** tab (w
 | **Ingested** | Orders loaded; finish locations and fleet |
 | **Ready to optimize** | Ready for HERE run |
 | **Optimizing** | Calculation in progress — wait |
-| **Optimized** | Routes ready — export, commit, or continue |
+| **Optimized** | Routes ready — export, assign, or continue |
 | **Optimization failed** | Fix inputs or retry from banner / Failed sessions |
-| **Committed** | Already sent to Planner — do not commit again |
+| **Planned in TCMS** | Already assigned to planner — session is view-only |
+
+:::tip Session history stuck on Ingested?
+If you completed optimize and assign but history still shows **Ingested**, ask IT to deploy the latest Booking Web App build. Current versions sync session status after browser optimization and after **Assign to planner**.
+:::
 
 ---
 
@@ -278,6 +304,8 @@ For **failed** optimization or dispatch only, use the **Failed sessions** tab (w
 | **HERE ok** missing | Ask IT to set `HERE_API_KEY` on the server |
 | Webhook orders not appearing | IT checks webhook secret, tenant id, and **Session history** |
 | Duplicate webhook error (409) | Normal on retry — use a **new** idempotency key for new batches |
+| Session history stuck at **Ingested** after optimize | Update to latest Booking Web App; check network for errors when saving session status |
+| **Assign to planner** disabled | Session may already be **Planned in TCMS** — review only |
 
 ---
 
@@ -285,7 +313,7 @@ For **failed** optimization or dispatch only, use the **Failed sessions** tab (w
 
 | Role | Typical tasks |
 | :--- | :--- |
-| **Dispatcher** | Upload file, fix locations, fleet, review routes, commit/export |
+| **Dispatcher** | Upload file, fix locations, fleet, review routes, assign/export |
 | **IT / integration** | Webhook setup, secrets, migrations, HERE key, feature flags |
 | **Operations manager** | Usage metrics, session history, failed session retries |
 
@@ -296,6 +324,8 @@ For **failed** optimization or dispatch only, use the **Failed sessions** tab (w
 | Document | Audience |
 | :--- | :--- |
 | [Webhook order ingest (API)](../developer/route-planning/webhook-orders-ingest-api) | Developers integrating ERP/webhook |
+| [Session lifecycle & status sync](../developer/route-planning/session-lifecycle) | Developers — status transitions and assign paths |
+| [Error codes](../developer/route-planning/error-codes) | Developers — `RP_*` API errors |
 | [Route Planning developer intro](../developer/route-planning/intro) | API base path and technical overview |
 
 ---
@@ -307,8 +337,10 @@ Before you tell drivers to go:
 - [ ] Every routed stop has coordinates on the map  
 - [ ] Depot and fleet are configured  
 - [ ] Optimization completed (routes visible, not placeholder cards)  
+- [ ] Session history shows **Optimized** (or later)  
 - [ ] Unassigned stops are intentional or resolved  
-- [ ] Export / commit / partner send completed if required by your process  
+- [ ] Export / assign / partner send completed if required by your process  
 - [ ] Assignment review done  
+- [ ] Session history shows **Planned in TCMS** if trips were created in Planner  
 
 That is the full end-to-end flow.
