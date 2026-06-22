@@ -30,20 +30,117 @@ Adjust the context path to match your Tomcat deployment.
 
 ---
 
+## Quick start — how to authenticate
+
+Every webhook call needs **four headers**. Only the **signature** uses the webhook secret; the idempotency key is a fresh random id you generate yourself.
+
+| Header | How to obtain it |
+| :--- | :--- |
+| `Content-Type` | Always `application/json` |
+| `X-Tenant-Id` | **Host key** for your TCMS tenant (shown on Settings → Route Planning Webhook as **X-Tenant-Id (host key)**). Example: `192.168.31.121:8010` — **not** the database catalog name (`marketing`). |
+| `X-Signature` | `sha256=` + HMAC-SHA256 hex digest of the **exact raw JSON body**, keyed with the webhook secret (see [Signature algorithm](#signature-algorithm)) |
+| `X-Idempotency-Key` | A new UUID (v4) for **each distinct batch** of orders. Reuse the same key only when retrying the **identical** payload after a timeout. |
+
+### Recommended: Postman (three demo requests, auto-signing)
+
+This is the fastest way to try all three pickup patterns without writing code.
+
+1. In TCMS, open **Settings → Route Planning Webhook** (legacy Settings tab or Light App `/lightapp/settings/route-planning-webhook`).
+2. Click **Generate signed developer kit** — the page shows your endpoint, tenant id, webhook secret, and a sample signed request.
+3. Click **Download personalized Postman collection** — this file embeds your `tenantId` and `webhookSecret` as collection variables.
+4. In Postman: **Import** the downloaded JSON.
+5. Open any of the **three demo requests** (Demo 1, Demo 2, Demo 3) and click **Send**.
+
+:::important Leave the Headers tab empty in Postman
+Do **not** paste `X-Signature` or `X-Idempotency-Key` manually. The collection **pre-request script** runs before each send and:
+
+- reads the raw JSON body from the request
+- computes `X-Signature` with `CryptoJS.HmacSHA256(body, webhookSecret)`
+- generates a fresh `X-Idempotency-Key` with `{{$guid}}`
+- sets `Content-Type` and `X-Tenant-Id`
+
+If you type headers yourself, they will be overwritten or conflict with the script.
+:::
+
+The static site copy ([`/postman/Route-Planning-Webhook-Demo.postman_collection.json`](/postman/Route-Planning-Webhook-Demo.postman_collection.json)) also contains **three** demo requests, but you must set `tenantId` and `webhookSecret` collection variables yourself. Prefer the **personalized download** from Settings.
+
+### Alternative: copy signed headers from Settings (curl / custom clients)
+
+Use this when you are not using Postman, or when prototyping a single payload.
+
+1. Generate the developer kit in Settings (same as above).
+2. Copy the **Signed headers (JSON)** block — it already includes a valid `X-Signature` and `X-Idempotency-Key` for the **sample body** shown on the page.
+3. Send that exact body with those headers (for example via the generated cURL command).
+
+If you edit the JSON body, click **Re-sign body** (or call the sign API below) so `X-Signature` matches the new bytes.
+
+**Re-sign API** (TCMS login `username` / `authKey`, not webhook HMAC):
+
+```
+POST {context}/rest/route-planning/webhook/developer-kit/sign?username=…&authKey=…
+Content-Type: application/json
+
+{ "body": "{ …exact raw JSON string… }" }
+```
+
+Response includes fresh `headers`, `curlCommand`, and `idempotencyKey` for that body.
+
+### Build your own integration (production path)
+
+Your ERP or middleware should, for each outbound batch:
+
+1. Serialize the JSON payload to a **single byte string** (pick one format and stick to it).
+2. Compute `signature = HMAC_SHA256(secret, rawBody)` → lowercase hex.
+3. Generate `idempotencyKey = new UUID`.
+4. `POST` with headers:
+   - `Content-Type: application/json`
+   - `X-Tenant-Id: {hostKey}`
+   - `X-Signature: sha256={signature}`
+   - `X-Idempotency-Key: {idempotencyKey}`
+
+The webhook secret is **never sent** on the wire — only used locally to sign the body.
+
+---
+
 ## Required headers
 
 | Header | Required | Description |
 | :--- | :---: | :--- |
 | `Content-Type` | Yes | Must be `application/json` |
-| `X-Tenant-Id` | Yes | Tenant schema identifier (same value used elsewhere in TCMS multi-tenant routing) |
+| `X-Tenant-Id` | Yes | Tenant **host key** from multitenancy routing (Settings page label: *X-Tenant-Id (host key)*). Same value the server expects for your deployment host/port — not the JDBC catalog name alone |
 | `X-Signature` | Yes | HMAC-SHA256 hex digest of the **raw request body** (optional prefix `sha256=`) |
-| `X-Idempotency-Key` | Yes | Unique key per tenant for this delivery attempt. Replays with the same key return **409** |
+| `X-Idempotency-Key` | Yes | Unique key per tenant for this delivery attempt. Replays with the same key return **409**. Generate with `uuidgen`, `UUID.randomUUID()`, or Postman `{{$guid}}` — **not** derived from the webhook secret |
 
 ### Signature algorithm
 
-1. Read the **exact raw JSON bytes** of the request body (no re-formatting before signing).
-2. Compute `HMAC-SHA256(secret, rawBody)`.
-3. Send the lowercase hex digest in `X-Signature`, optionally prefixed with `sha256=`.
+The server verifies: `expected = HMAC-SHA256(webhookSecret, rawRequestBody)` and compares it to the header value (with optional `sha256=` prefix stripped).
+
+**Step by step:**
+
+1. **Fix the body bytes** — whatever string your HTTP client will send as the entity body (including spaces, newlines, key order). Pretty-printed JSON is fine **if you sign the same string you send**.
+2. **Load the secret** — from Settings → Route Planning Webhook, or from server config (see resolution order below). The secret is a plain string; no base64 decoding unless you configured it that way.
+3. **Compute HMAC-SHA256** — `HMAC(key=secret, message=rawBody)` → **lowercase hexadecimal** (64 characters).
+4. **Set the header** — `X-Signature: sha256={hex}` (prefix optional but recommended).
+
+**Worked example** (secret `my-dev-secret`, body exactly `{"planningDate":"2026-06-12","orders":[]}`):
+
+```bash
+echo -n '{"planningDate":"2026-06-12","orders":[]}' \
+  | openssl dgst -sha256 -hmac 'my-dev-secret'
+# → SHA2-256(stdin)= a1b2c3… (use the hex part after the =)
+# Header: X-Signature: sha256=a1b2c3…
+```
+
+**Idempotency key** (separate from signing):
+
+```bash
+# macOS / Linux — new key per batch
+uuidgen
+# → 08fe3ad7-c005-4cfc-a0f6-a970480db8d1
+# Header: X-Idempotency-Key: 08fe3ad7-c005-4cfc-a0f6-a970480db8d1
+```
+
+Use a **new** UUID when sending a **new** batch. Reuse the **same** UUID only when retrying the **same** payload after a network error (so the server can deduplicate and return 409 instead of double-ingesting).
 
 **Secret resolution order** (first match wins):
 
@@ -172,16 +269,16 @@ Send pickup with the webhook so operators **do not** pick route start manually o
 - Multipart field `depotJson` — JSON string with the same depot object shape.
 - **Pickup row** in the file — set `orderNo` to `PICKUP` or `DEPOT`, or column `stopRole` = `pickup`. That row is **not** ingested as a delivery stop; it becomes session depot + route setup.
 
-### Generate signed headers in Settings (no manual HMAC)
+### Generate signed headers in Settings (developer kit API)
 
-Operators can generate a **copy-paste developer kit** from TCMS Settings — endpoint URL, tenant id, webhook secret, signed headers, sample JSON, cURL, and Postman variables/script.
+Operators can generate a **copy-paste developer kit** from TCMS Settings — endpoint URL, tenant id, webhook secret, signed headers, sample JSON, cURL, and a **personalized Postman collection with three demo requests**.
 
 | UI | Path |
 | :--- | :--- |
 | **Legacy Settings** | **Settings → Route Planning Webhook** tab → **Generate signed developer kit** |
 | **Light App** | **Settings → Route Planning Webhook** (`/lightapp/settings/route-planning-webhook`) |
 
-**API** (authenticated with `username` / `authKey`, not webhook HMAC):
+**Developer kit API** (authenticated with `username` / `authKey`, not webhook HMAC):
 
 ```
 GET  {context}/rest/route-planning/webhook/developer-kit?username=…&authKey=…
@@ -189,20 +286,42 @@ POST {context}/rest/route-planning/webhook/developer-kit/sign?username=…&authK
      Body: { "body": "{ … raw JSON … }" }
 ```
 
-The server signs using the same secret resolution as production webhooks. Share the generated blocks with your integration team or paste Postman variables into the demo collection below.
+Implemented on `RoutePlanningWebhookAPI.java` (same resource class as webhook order ingest).
 
-### Postman demo collection
+The server signs using the same secret resolution as production webhooks. The GET response includes:
 
-Import this collection to try all three webhook patterns (HMAC signing is automatic):
+| Field | Use |
+| :--- | :--- |
+| `endpointUrl` | Full POST URL for webhook ingest |
+| `tenantId` | Value for `X-Tenant-Id` |
+| `webhookSecret` | HMAC key (also embedded in personalized Postman download) |
+| `headers` | Ready-to-send `Content-Type`, `X-Tenant-Id`, `X-Signature`, `X-Idempotency-Key` for the sample body |
+| `curlCommand` | One-line test using those headers |
+| `postmanCollectionJson` | Personalized collection JSON (three demos + your variables) — same as the download button |
 
-**File:** [`/postman/Route-Planning-Webhook-Demo.postman_collection.json`](/postman/Route-Planning-Webhook-Demo.postman_collection.json) (also in repo `static/postman/`)
+### Postman demo collection (three requests)
+
+The collection contains **three separate POST requests**, one for each pickup-at-ingest pattern. All share one collection-level pre-request script that signs every send.
+
+| Import source | Variables pre-filled? | Demo count |
+| :--- | :---: | :---: |
+| **Settings → Download personalized Postman collection** | Yes (`tenantId`, `webhookSecret`, `baseUrl`) | **3** |
+| Static file [`/postman/Route-Planning-Webhook-Demo.postman_collection.json`](/postman/Route-Planning-Webhook-Demo.postman_collection.json) | No — set manually | **3** |
+
+**File:** [`/postman/Route-Planning-Webhook-Demo.postman_collection.json`](/postman/Route-Planning-Webhook-Demo.postman_collection.json) (repo: `static/postman/`)
+
+| Request name | Pattern |
+| :--- | :--- |
+| Demo 1 — Standalone depot (depot object) | `depot` + 3 deliveries |
+| Demo 2 — Pickup row linked (sourceOrderId) | `depot.sourceOrderId` matches warehouse row |
+| Demo 3 — pickupLocation alias (3 deliveries) | `pickupLocation` instead of `depot` |
 
 | Collection variable | Example |
 | :--- | :--- |
-| `baseUrl` | `https://your-host:8443` |
+| `baseUrl` | `http://192.168.31.121:8010` (scheme + host + port, no path) |
 | `contextPath` | `transportsupplyproject` |
-| `tenantId` | Your tenant schema id |
-| `webhookSecret` | Same value as `routeplanning.webhook.secret` on server |
+| `tenantId` | Host key from Settings (e.g. `192.168.31.121:8010`) |
+| `webhookSecret` | Hex/string from Settings or `routeplanning.webhook.secret` on server |
 
 Sample JSON bodies (download from site root `/samples/` or repo `static/samples/`):
 
@@ -369,7 +488,8 @@ JSON error shape:
 
 ## Idempotency
 
-- Store and reuse **`X-Idempotency-Key`** only when retrying the **same** logical delivery (network timeout, etc.).
+- **`X-Idempotency-Key` is not signed** and is **not** derived from the webhook secret — it is simply a unique string (UUID recommended) that identifies this delivery attempt for deduplication.
+- Store and reuse the key only when retrying the **same** logical delivery (network timeout, etc.).
 - Use a **new** idempotency key for each distinct batch of orders.
 - Duplicate keys are recorded in `route_planning_webhook_event` and rejected with **409** so orders are not double-ingested.
 
