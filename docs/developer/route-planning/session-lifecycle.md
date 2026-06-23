@@ -127,5 +127,5 @@ From `routePlanningSessionActionGates.js`:
 ## Related
 
 - [Error codes — session & commit](./error-codes#session)
-- [End-to-end flow (operators)](/route-planning/end-to-end-flow)
+- [End-to-end flow (operators)](/docs/route-planning/end-to-end-flow)
 - TCMS repo: `docs/developer/route-planning/ROUTE_PLANNING_V2_WORKFLOW.md` §5

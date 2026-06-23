@@ -75,7 +75,7 @@ Duplicate assign blocked when status is **`COMMITTED`** (`RP_COMMIT_008` on serv
 
 | Guide | Description |
 | :--- | :--- |
-| [End-to-end flow (beginner guide)](/route-planning/end-to-end-flow) | Plain-language wizard walkthrough for dispatchers |
+| [End-to-end flow (beginner guide)](/docs/route-planning/end-to-end-flow) | Plain-language wizard walkthrough for dispatchers |
 | [Webhook order ingest](./webhook-orders-ingest-api) | Push orders + **pickup at ingest**; HMAC signing, idempotency, Settings developer kit, Postman (3 demos) |
 | [Session lifecycle & status sync](./session-lifecycle) | Status transitions, wizard sync, mermaid diagram |
 | [Error codes](./error-codes) | Stable `RP_*` codes for ingest, session, optimize, commit, dispatch |
