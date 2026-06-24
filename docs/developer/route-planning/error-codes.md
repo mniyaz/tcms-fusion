@@ -104,6 +104,17 @@ Use `POST …/optimize/retry` only when status is **`OPTIMIZATION_FAILED`**.
 
 ---
 
+## Live tracking
+
+| Code | HTTP | Meaning |
+| :--- | :---: | :--- |
+| `RP_TRACK_001` | 500 | Live routes or GPS trail query failed |
+| `RP_TRACK_002` | 404 / 400 | Route not found, invalid route id, or session not optimized/committed/exported |
+
+See [Live route tracking API](./live-route-tracking-api).
+
+---
+
 ## Health
 
 | Code | HTTP | Meaning |
@@ -115,5 +126,6 @@ Use `POST …/optimize/retry` only when status is **`OPTIMIZATION_FAILED`**.
 
 ## Related
 
+- [Live route tracking API](./live-route-tracking-api)
 - [Session lifecycle & status sync](./session-lifecycle)
 - [Webhook order ingest](./webhook-orders-ingest-api)

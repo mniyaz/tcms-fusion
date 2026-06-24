@@ -22,6 +22,7 @@ No API or coding knowledge required for the main wizard path.
 4. Let **HERE Maps** calculate the best routes.
 5. **Export**, **assign to planner**, or **send to a third party**.
 6. Do a final **assignment review** before drivers go out.
+7. On delivery day, **monitor live progress** on the map (optional but recommended).
 
 Each run is saved as a **planning session**. **Session history** (under **Usage metrics & history**) shows where you are in the workflow — for example **Optimized** after routes are calculated and **Planned in TCMS** after you assign drivers and trucks.
 
@@ -36,6 +37,8 @@ Each run is saved as a **planning session**. **Session history** (under **Usage 
 :::info Legacy page
 An older **Route optimization** page may still exist at `/route-optimization`. Use **Route planning** for the full wizard described here.
 :::
+
+**Live monitoring:** After routes are optimized (and ideally assigned), open **Operations → Live Route Tracking** (`/lightapp/route-planning/live-tracking`) to see planned routes with live driver GPS, stop swipe/POD status, and driven-path replay. See [Live route tracking](./live-route-tracking).
 
 ---
 
@@ -234,6 +237,25 @@ When you reopen a session that was already assigned, routes and stop addresses s
 
 ---
 
+## Step 7 — Live route tracking (delivery day)
+
+**Screen:** Live Route Tracking (`/lightapp/route-planning/live-tracking`)
+
+**When to use:** After **Assign to planner**, while drivers are executing routes on the selected **planning date**.
+
+**Do this:**
+
+1. Set the **planning date** to match the day you planned (defaults to today).
+2. Review **summary stats** (on route / at risk / off route / no signal).
+3. Select a route in the left list or on the map to open **driver**, **truck**, and **delivery stop** details.
+4. Click stop markers to see **swipe in/out** and **POD** links.
+5. Turn on **Driven path** and use **Route replay** to compare actual GPS vs the planned line.
+6. Leave **Auto 30s** on for hands-free updates — the map keeps your zoom after you pan.
+
+Full walkthrough: [Live route tracking](./live-route-tracking).
+
+---
+
 ## After planning — optional actions
 
 These happen from **Route preview** (step 5) or **Assignment review** (step 6) when status is **Optimized**:
@@ -323,6 +345,7 @@ If you completed optimize and assign but history still shows **Ingested**, ask I
 
 | Document | Audience |
 | :--- | :--- |
+| [Live route tracking](./live-route-tracking) | Dispatchers — GPS map, stops, swipe/POD on delivery day |
 | [Webhook order ingest (API)](../developer/route-planning/webhook-orders-ingest-api) | Developers integrating ERP/webhook |
 | [Postman webhook demo](/postman/Route-Planning-Webhook-Demo.postman_collection.json) | Import into Postman — 3 signed sample ingests |
 | [Session lifecycle & status sync](../developer/route-planning/session-lifecycle) | Developers — status transitions and assign paths |
@@ -343,5 +366,6 @@ Before you tell drivers to go:
 - [ ] Export / assign / partner send completed if required by your process  
 - [ ] Assignment review done  
 - [ ] Session history shows **Planned in TCMS** if trips were created in Planner  
+- [ ] **Live Route Tracking** checked on delivery day (GPS, stops, POD) if your process requires it  
 
 That is the full end-to-end flow.

@@ -124,8 +124,17 @@ From `routePlanningSessionActionGates.js`:
 
 ---
 
+## Live route tracking visibility
+
+Sessions with status **`OPTIMIZED`**, **`COMMITTED`**, or **`EXPORTED`** appear on **Live Route Tracking** for their planning date (`GET /live-routes`). **`COMMITTED`** sessions typically have planner trips and mobile GPS; **`OPTIMIZED`** sessions show planned geometry but may show **no signal** until assign completes.
+
+See [Live route tracking API](./live-route-tracking-api) and [Live route tracking (operators)](/docs/route-planning/live-route-tracking).
+
+---
+
 ## Related
 
+- [Live route tracking API](./live-route-tracking-api)
 - [Error codes — session & commit](./error-codes#session)
 - [End-to-end flow (operators)](/docs/route-planning/end-to-end-flow)
 - TCMS repo: `docs/developer/route-planning/ROUTE_PLANNING_V2_WORKFLOW.md` §5
